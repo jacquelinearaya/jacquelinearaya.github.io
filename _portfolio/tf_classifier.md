@@ -27,7 +27,7 @@ In this notebook I used transfer learning to build a neural network model based 
  <img src="https://blogs.cul.columbia.edu/outdoorsculpture/files/2015/12/curl_20151219-500x333.jpg" width="200">
 
 
-To see and test the model working, please visit: https://jacquelinearaya.github.io/classifier.
+To see and test the model working, please visit: <https://jacquelinearaya.github.io/classifier>.
 
 
 
@@ -203,7 +203,7 @@ for n in range(3):
 
 
     
-![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg}})
+![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg)
     
 
 
@@ -212,7 +212,7 @@ for n in range(3):
 
 
     
-!![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg}})
+!![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg)
     
 
 
@@ -221,7 +221,7 @@ for n in range(3):
 
 
     
-![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg}})
+![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg)
     
 
 
@@ -271,7 +271,7 @@ display.display(display.Image(photo_paths[2], width = 385, height = 375))
 
 
     
-![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_27_0.jpeg)
+![image]({{page.img}} assets/img/portfolio/tf_classifier_files/tf_classifier_27_0.jpeg)
     
 
 
@@ -433,7 +433,7 @@ plotImages(sample_training_images, sample_train_labels, inverse_class)
 
 
     
-![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_44_0.png}})
+![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_44_0.png)
     
 
 
@@ -579,7 +579,7 @@ plot_metrics(model_1_history)
 
 
     
-![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_52_0.png}})
+![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_52_0.png)
     
 
 
@@ -751,7 +751,7 @@ plot_metrics(history)
 
 
     
-![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_73_0.png}})
+![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_73_0.png)
     
 
 
@@ -876,7 +876,7 @@ plot_metrics(history_2)
 
 
     
-![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_85_0.png}})
+![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_85_0.png)
     
 
 
