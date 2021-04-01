@@ -53,7 +53,7 @@ except Exception:
 
 
 
-```
+```python
 import tensorflow as tf
 print(tf.__version__)
 ```
@@ -62,7 +62,7 @@ print(tf.__version__)
 
 
 
-```
+```python
 import IPython.display as display
 import matplotlib.pyplot as plt
 import numpy as np
@@ -80,7 +80,7 @@ from tensorflow.keras import datasets, layers, models
 ### Some model specifications
 
 
-```
+```python
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 BATCH_SIZE = 32
 IMG_SIZE = 256
@@ -90,7 +90,7 @@ SHUFFLE_SIZE = 1000
 ### Connect to Google Drive to download dataset of images and unzip to local folder
 
 
-```
+```python
 # Connect to Google Drive (to load raw data)
 !pip install -U -q PyDrive
 from pydrive.auth import GoogleAuth
@@ -105,7 +105,7 @@ drive = GoogleDrive(gauth)
 ```
 
 
-```
+```python
 files_name = {'dataset_columbia.tar.gz': '1NAQ7MSbyAcMidMwLQfJ0pIYmhu161awF'}
 
 for key, value in files_name.items():
@@ -134,7 +134,7 @@ for key, value in files_name.items():
 ```
 
 
-```
+```python
 base_dir = "dataset_columbia/"
 base_dir_path = pathlib.Path(base_dir)
 
@@ -149,7 +149,7 @@ labels = [str(path).replace(base_dir,'') for path in labels]
 Check the paths to images and the labels
 
 
-```
+```python
 photo_paths[:5]
 ```
 
@@ -165,7 +165,7 @@ photo_paths[:5]
 
 
 
-```
+```python
 labels
 ```
 
@@ -179,7 +179,7 @@ labels
 How many images are there to train the model?
 
 
-```
+```python
 n_photos = len(photo_paths)
 n_photos
 ```
@@ -194,7 +194,7 @@ n_photos
 Let's display some images from the loaded files:
 
 
-```
+```python
 for n in range(3):
   image_path = random.choice(photo_paths)
   display.display(display.Image(image_path, width = 285, height = 275)) #resize images to display
@@ -219,7 +219,7 @@ for n in range(3):
 The original photos (taken by me) are rotated internally because they were taken with a smartphone in a vertical way, therefore I'll use a function to change the original rotation of an image
 
 
-```
+```python
 def load_and_preprocess_image(path):
   '''
   Input: path of location of image
@@ -250,7 +250,7 @@ def load_and_preprocess_image(path):
 Once the function is applied the jpg files are modified locally
 
 
-```
+```python
 result =  load_and_preprocess_image(photo_paths[2])
 display.display(display.Image(photo_paths[2], width = 385, height = 375))
 ```
@@ -266,14 +266,14 @@ display.display(display.Image(photo_paths[2], width = 385, height = 375))
 Create train and test splits using Sklearn library
 
 
-```
+```python
 #split train/test for processed images
 from sklearn.model_selection import train_test_split
 train_paths, test_paths = train_test_split(photo_paths)
 ```
 
 
-```
+```python
 len(train_paths), len(test_paths)
 ```
 
@@ -290,7 +290,7 @@ len(train_paths), len(test_paths)
 Preprocess images and copy them to the Train or Test folder according to the Train/Test separation
 
 
-```
+```python
 #Create separate directories to get a train and a test dataset
 
 #Split base_dir_path (images pahts) into train and test folders
@@ -328,7 +328,7 @@ for p in test_paths:
 ```
 
 
-```
+```python
 train_dir_path = pathlib.Path(train_dir)
 test_dir_path = pathlib.Path(test_dir)
 ```
@@ -338,7 +338,7 @@ test_dir_path = pathlib.Path(test_dir)
 Use ImageDataGenerator from TF to create a generator that rescale images and create batches of images to feed to the model when training
 
 
-```
+```python
 train_datagen = ImageDataGenerator(rescale=1./255)
 test_datagen = ImageDataGenerator(rescale=1./255)
 
@@ -377,12 +377,12 @@ for data_batch, labels_batch in test_generator:
 Check the generator works well with a batch of images
 
 
-```
+```python
 sample_training_images, sample_train_labels = next(train_generator)
 ```
 
 
-```
+```python
 sample_labels[:5]
 ```
 
@@ -394,13 +394,13 @@ sample_labels[:5]
 
 
 
-```
+```python
 train_generator.class_indices
 inverse_class = {v:k for k, v in train_generator.class_indices.items()}
 ```
 
 
-```
+```python
 def plotImages(images_sample, labels_sample, class_dict):
     fig, axes = plt.subplots(1, 5, figsize=(20,20))
     axes = axes.flatten()
@@ -413,7 +413,7 @@ def plotImages(images_sample, labels_sample, class_dict):
 ```
 
 
-```
+```python
 plotImages(sample_training_images, sample_train_labels, inverse_class)
 ```
 
@@ -426,7 +426,7 @@ plotImages(sample_training_images, sample_train_labels, inverse_class)
 ## Models
 
 
-```
+```python
 def plot_metrics(history):
   '''Function to plot accuracy and loss from train and test sets from model history once trained
   Input: model fit object
@@ -461,7 +461,7 @@ def plot_metrics(history):
 Let's create a small simple CNN model and see its performance
 
 
-```
+```python
 model_1 = models.Sequential()
 
 model_1.add(layers.Conv2D(32, (3, 3), activation='relu', 
@@ -481,7 +481,7 @@ model_1.compile(optimizer='adam',
 ```
 
 
-```
+```python
 model_1.summary()
 ```
 
@@ -508,7 +508,7 @@ model_1.summary()
 
 
 
-```
+```python
 model_1_history = model_1.fit(
       train_generator,
       steps_per_epoch=5,
@@ -559,7 +559,7 @@ model_1_history = model_1.fit(
 
 
 
-```
+```python
 plot_metrics(model_1_history)
 ```
 
@@ -575,24 +575,24 @@ Once the model is trained we can make predictions (for simplicity I'll use the t
 The model returns probabilities of belonging to each class, I'll take the maximum to predict the class
 
 
-```
+```python
 class_testlabels = {v:k for k, v in test_generator.class_indices.items()}
 ```
 
 
-```
+```python
 sample_test_images, sample_test_labels = next(test_generator)
 ```
 
 
-```
+```python
 raw_prediction = model_1.predict(sample_test_images)
 sample_prob_prediction = np.max(raw_prediction, axis=1)
 sample_class_prediction = np.argmax(raw_prediction, axis=1)
 ```
 
 
-```
+```python
 #predictions for sample test
 for r,c,p in zip(sample_test_labels[:10], sample_class_prediction[:10], sample_prob_prediction[:10]):
   print("Real label: %s -> Predicted label: %s with %s probability"%(class_testlabels[r],class_testlabels[c], np.round(p,3)))
@@ -619,7 +619,7 @@ I'll use Keras applications module to load the well known VGG16 model. This allo
 I'll use VGG16 model with weights from 'imagenet' and set the layers to not be trainable.
 
 
-```
+```python
 base_model = tf.keras.applications.VGG16(include_top=False, weights ='imagenet',
                                         input_shape = (IMG_SIZE, IMG_SIZE, 3))
 base_model.trainable = False 
@@ -632,13 +632,13 @@ base_model.trainable = False
 Add two top layers to the base model of VGG16 to average last layer and predict:
 
 
-```
+```python
 global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
 prediction_layer = tf.keras.layers.Dense(3, activation='softmax')
 ```
 
 
-```
+```python
 # build a new model reusing the pretrained base
 tl_model = tf.keras.Sequential([
   base_model,
@@ -647,7 +647,7 @@ tl_model = tf.keras.Sequential([
 ```
 
 
-```
+```python
 tl_model.summary()
 ```
 
@@ -672,14 +672,14 @@ From the model summary, we can actually see that the number of parameters that a
 Compile and train:
 
 
-```
+```python
 tl_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 ```
 
 
-```
+```python
 history = tl_model.fit(
       train_generator,
       epochs=20,
@@ -731,7 +731,7 @@ history = tl_model.fit(
 We can see an improvement in terms of accuracy for the validation set: 96%. Let's visualize its metrics:
 
 
-```
+```python
 plot_metrics(history)
 ```
 
@@ -748,12 +748,12 @@ Can we still keep improving the model?
 We can actually train some of the layers of the base model: bottom layers capture more fundamental shapes and patterns of images, but top layers actually learn features more specific to the dataset in hand.
 
 
-```
+```python
 base_model.trainable = True
 ```
 
 
-```
+```python
 #how many layers are in the base model
 print("Number of layers in the base model: ", len(base_model.layers))
 
@@ -771,14 +771,14 @@ for layer in base_model.layers[:fine_tune_at]:
 Out of the 19 layers of VGG16, let's train the last 2 layers.
 
 
-```
+```python
 tl_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001/10),
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 ```
 
 
-```
+```python
 tl_model.summary()
 ```
 
@@ -801,7 +801,7 @@ tl_model.summary()
 From the summary of this new model, we can see that by training the last 2 top layers plus the last layers to predict, the model becomes bigger: from 1,539 to 4,721,155 trainable parameters. Let's train from the last epoch of the previous model:
 
 
-```
+```python
 history_2 = tl_model.fit(
       train_generator,
       epochs=20+20,
@@ -856,7 +856,7 @@ history_2 = tl_model.fit(
 We can see that for this round of training, the accuracy of the test set improves and the train set actually reaches 100% of accuracy.
 
 
-```
+```python
 plot_metrics(history_2)
 ```
 
@@ -871,12 +871,12 @@ Here, we need to make a decision based on the trade off of accuracy (and overfit
 ### Save model to Keras h5 format
 
 
-```
+```python
 tl_model.save("/content/columbiamodel.h5")
 ```
 
 
-```
+```python
 auth.authenticate_user()
 gauth = GoogleAuth()
 gauth.credentials = GoogleCredentials.get_application_default()
@@ -985,7 +985,7 @@ file1.Upload()
 ```
 
 
-```
+```python
 [f for f in os.listdir('/content/tfjs_model/')]
 ```
 
@@ -1012,7 +1012,7 @@ file1.Upload()
 
 
 
-```
+```python
 auth.authenticate_user()
 gauth = GoogleAuth()
 gauth.credentials = GoogleCredentials.get_application_default()
