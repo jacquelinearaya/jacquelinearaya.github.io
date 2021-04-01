@@ -5,6 +5,7 @@ feature-img: "assets/img/portfolio/tf_classifier.jpg"
 img: "assets/img/portfolio/tf_classifier.jpg"
 date: 20 June 2020
 tags: [Tensorflow, Keras, Classification, Convolutional Networks]
+output: html_document
 ---
 
 
@@ -29,7 +30,7 @@ In this notebook I use transfer learning to build a neural network model based o
  <img src="https://blogs.cul.columbia.edu/outdoorsculpture/files/2015/12/curl_20151219-500x333.jpg" width="200">
 
 
-To see and test the model working, please visit: [https://jacquelinearaya.github.io/classifier].
+To see and test the model working, please visit: https://jacquelinearaya.github.io/classifier
 
 ---
 
@@ -247,7 +248,7 @@ display.display(display.Image(photo_paths[2], width = 385, height = 375))
 ```
 
 
-![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_26_0.jpeg)
+![](assets/img/portfolio/tf_classifier_26_0.jpeg)
 
 
 ### Create a Train/Test split of the images paths
@@ -406,7 +407,7 @@ plotImages(sample_training_images, sample_train_labels, inverse_class)
 ```
 
 
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_43_0.png)
+![](assets/img/portfolio/tf_classifier_43_0.png)
 
 
 ## Models
@@ -551,7 +552,7 @@ plot_metrics(model_1_history)
 ```
 
 
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_51_0.png)
+![](assets/img/portfolio/tf_classifier_51_0.png)
 
 
 Once the model is trained we can make predictions (for simplicity I'll use the test dataset since we don't have a validation set)
@@ -721,7 +722,7 @@ plot_metrics(history)
 ```
 
 
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_72_0.png)
+![](assets/img/portfolio/tf_classifier_72_0.png)
 
 
 Can we still keep improving the model?
@@ -844,7 +845,7 @@ plot_metrics(history_2)
 ```
 
 
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_84_0.png)
+![](assets/img/portfolio/tf_classifier_84_0.png)
 
 
 Here, we need to make a decision based on the trade off of accuracy (and overfitting) vs. size of the model. Since the improvement in accuracy is not significantly higher, let's keep the simpler VGG16 base model without trainable layers, having in mind this model would be lighter to load and deploy on a website.
@@ -879,36 +880,36 @@ file1.Upload()
     Collecting tensorflowjs==1.2.6
       Downloading https://files.pythonhosted.org/packages/e7/6a/b8da7692e9a289edbb83f4693ceb2c0be270ad30a5aee7438627e562ff95/tensorflowjs-1.2.6-py3-none-any.whl
     Collecting tensorflow-hub==0.5.0
-    [?25l  Downloading https://files.pythonhosted.org/packages/b5/be/f18c352d84382d9c795a0f37eaf16d42ace7d161fbb0ad20bdcd5e550015/tensorflow_hub-0.5.0-py2.py3-none-any.whl (78kB)
-    [K     |████████████████████████████████| 81kB 6.7MB/s 
-    [?25hCollecting tensorflow==1.14.0
-    [?25l  Downloading https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl (109.2MB)
-    [K     |████████████████████████████████| 109.2MB 115kB/s 
-    [?25hCollecting h5py==2.8.0
-    [?25l  Downloading https://files.pythonhosted.org/packages/8e/cb/726134109e7bd71d98d1fcc717ffe051767aac42ede0e7326fd1787e5d64/h5py-2.8.0-cp36-cp36m-manylinux1_x86_64.whl (2.8MB)
-    [K     |████████████████████████████████| 2.8MB 59.7MB/s 
-    [?25hCollecting numpy==1.16.4
-    [?25l  Downloading https://files.pythonhosted.org/packages/87/2d/e4656149cbadd3a8a0369fcd1a9c7d61cc7b87b3903b85389c70c989a696/numpy-1.16.4-cp36-cp36m-manylinux1_x86_64.whl (17.3MB)
-    [K     |████████████████████████████████| 17.3MB 236kB/s 
-    [?25hCollecting six==1.11.0
+    [?25l  Downloading https://files.pythonhosted.org/packages/b5/be/f18c352d84382d9c795a0f37eaf16d42ace7d161fbb0ad20bdcd5e550015/tensorflow_hub-0.5.0-py2.py3-none-any.whl (78kB)
+    [K     |████████████████████████████████| 81kB 6.7MB/s 
+    [?25hCollecting tensorflow==1.14.0
+    [?25l  Downloading https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl (109.2MB)
+    [K     |████████████████████████████████| 109.2MB 115kB/s 
+    [?25hCollecting h5py==2.8.0
+    [?25l  Downloading https://files.pythonhosted.org/packages/8e/cb/726134109e7bd71d98d1fcc717ffe051767aac42ede0e7326fd1787e5d64/h5py-2.8.0-cp36-cp36m-manylinux1_x86_64.whl (2.8MB)
+    [K     |████████████████████████████████| 2.8MB 59.7MB/s 
+    [?25hCollecting numpy==1.16.4
+    [?25l  Downloading https://files.pythonhosted.org/packages/87/2d/e4656149cbadd3a8a0369fcd1a9c7d61cc7b87b3903b85389c70c989a696/numpy-1.16.4-cp36-cp36m-manylinux1_x86_64.whl (17.3MB)
+    [K     |████████████████████████████████| 17.3MB 236kB/s 
+    [?25hCollecting six==1.11.0
       Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
     Collecting keras==2.2.4
-    [?25l  Downloading https://files.pythonhosted.org/packages/5e/10/aa32dad071ce52b5502266b5c659451cfd6ffcbf14e6c8c4f16c0ff5aaab/Keras-2.2.4-py2.py3-none-any.whl (312kB)
-    [K     |████████████████████████████████| 317kB 60.1MB/s 
-    [?25hRequirement already satisfied, skipping upgrade: protobuf>=3.4.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-hub==0.5.0->tensorflowjs==1.2.6) (3.10.0)
+    [?25l  Downloading https://files.pythonhosted.org/packages/5e/10/aa32dad071ce52b5502266b5c659451cfd6ffcbf14e6c8c4f16c0ff5aaab/Keras-2.2.4-py2.py3-none-any.whl (312kB)
+    [K     |████████████████████████████████| 317kB 60.1MB/s 
+    [?25hRequirement already satisfied, skipping upgrade: protobuf>=3.4.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-hub==0.5.0->tensorflowjs==1.2.6) (3.10.0)
     Requirement already satisfied, skipping upgrade: wrapt>=1.11.1 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (1.12.1)
     Requirement already satisfied, skipping upgrade: keras-preprocessing>=1.0.5 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (1.1.2)
     Requirement already satisfied, skipping upgrade: termcolor>=1.1.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (1.1.0)
     Collecting tensorflow-estimator<1.15.0rc0,>=1.14.0rc0
-    [?25l  Downloading https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-1.14.0-py2.py3-none-any.whl (488kB)
-    [K     |████████████████████████████████| 491kB 57.2MB/s 
-    [?25hRequirement already satisfied, skipping upgrade: gast>=0.2.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (0.3.3)
+    [?25l  Downloading https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-1.14.0-py2.py3-none-any.whl (488kB)
+    [K     |████████████████████████████████| 491kB 57.2MB/s 
+    [?25hRequirement already satisfied, skipping upgrade: gast>=0.2.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (0.3.3)
     Requirement already satisfied, skipping upgrade: keras-applications>=1.0.6 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (1.0.8)
     Requirement already satisfied, skipping upgrade: astor>=0.6.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (0.8.1)
     Collecting tensorboard<1.15.0,>=1.14.0
-    [?25l  Downloading https://files.pythonhosted.org/packages/91/2d/2ed263449a078cd9c8a9ba50ebd50123adf1f8cfbea1492f9084169b89d9/tensorboard-1.14.0-py3-none-any.whl (3.1MB)
-    [K     |████████████████████████████████| 3.2MB 43.1MB/s 
-    [?25hRequirement already satisfied, skipping upgrade: grpcio>=1.8.6 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (1.29.0)
+    [?25l  Downloading https://files.pythonhosted.org/packages/91/2d/2ed263449a078cd9c8a9ba50ebd50123adf1f8cfbea1492f9084169b89d9/tensorboard-1.14.0-py3-none-any.whl (3.1MB)
+    [K     |████████████████████████████████| 3.2MB 43.1MB/s 
+    [?25hRequirement already satisfied, skipping upgrade: grpcio>=1.8.6 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (1.29.0)
     Requirement already satisfied, skipping upgrade: google-pasta>=0.1.6 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (0.2.0)
     Requirement already satisfied, skipping upgrade: wheel>=0.26 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (0.34.2)
     Requirement already satisfied, skipping upgrade: absl-py>=0.7.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow==1.14.0->tensorflowjs==1.2.6) (0.9.0)
@@ -919,10 +920,10 @@ file1.Upload()
     Requirement already satisfied, skipping upgrade: markdown>=2.6.8 in /usr/local/lib/python3.6/dist-packages (from tensorboard<1.15.0,>=1.14.0->tensorflow==1.14.0->tensorflowjs==1.2.6) (3.2.2)
     Requirement already satisfied, skipping upgrade: importlib-metadata; python_version < "3.8" in /usr/local/lib/python3.6/dist-packages (from markdown>=2.6.8->tensorboard<1.15.0,>=1.14.0->tensorflow==1.14.0->tensorflowjs==1.2.6) (1.6.0)
     Requirement already satisfied, skipping upgrade: zipp>=0.5 in /usr/local/lib/python3.6/dist-packages (from importlib-metadata; python_version < "3.8"->markdown>=2.6.8->tensorboard<1.15.0,>=1.14.0->tensorflow==1.14.0->tensorflowjs==1.2.6) (3.1.0)
-    [31mERROR: umap-learn 0.4.3 has requirement numpy>=1.17, but you'll have numpy 1.16.4 which is incompatible.[0m
-    [31mERROR: google-colab 1.0.0 has requirement six~=1.12.0, but you'll have six 1.11.0 which is incompatible.[0m
-    [31mERROR: datascience 0.10.6 has requirement folium==0.2.1, but you'll have folium 0.8.3 which is incompatible.[0m
-    [31mERROR: albumentations 0.1.12 has requirement imgaug<0.2.7,>=0.2.5, but you'll have imgaug 0.2.9 which is incompatible.[0m
+    [31mERROR: umap-learn 0.4.3 has requirement numpy>=1.17, but you'll have numpy 1.16.4 which is incompatible.[0m
+    [31mERROR: google-colab 1.0.0 has requirement six~=1.12.0, but you'll have six 1.11.0 which is incompatible.[0m
+    [31mERROR: datascience 0.10.6 has requirement folium==0.2.1, but you'll have folium 0.8.3 which is incompatible.[0m
+    [31mERROR: albumentations 0.1.12 has requirement imgaug<0.2.7,>=0.2.5, but you'll have imgaug 0.2.9 which is incompatible.[0m
     Installing collected packages: six, numpy, tensorflow-hub, tensorflow-estimator, tensorboard, tensorflow, h5py, keras, tensorflowjs
       Found existing installation: six 1.12.0
         Uninstalling six-1.12.0:
@@ -1029,4 +1030,4 @@ for name in bin_files:
 
 The bin files along with the model in json format are going to be use to deploy the classifier model on a simple website using TensorFlow.js
 
-Visit: [https://jacquelinearaya.github.io/classifier] to see the model deployed.
+Visit: https://jacquelinearaya.github.io/classifier to see the model deployed.
