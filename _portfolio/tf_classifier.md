@@ -24,7 +24,7 @@ In this notebook I used transfer learning to build a neural network model based 
 ![image](/assets/img/portfolio/tf_classifier_files/curl.jpg)
 
 
-{% include aligner.html images="/assets/img/portfolio/tf_classifier_files/almamater.jpg,/assets/img/portfolio/tf_classifier.jpg,/assets/img/portfolio/tf_classifier_files/curl.jpg" column=3 %}
+{% include aligner.html images="portfolio/tf_classifier_files/almamater.jpg,portfolio/tf_classifier.jpg,portfolio/tf_classifier_files/curl.jpg" column=3 %}
 
 ---
 
