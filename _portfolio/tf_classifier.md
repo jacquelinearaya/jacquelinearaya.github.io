@@ -13,18 +13,18 @@ In this notebook I used transfer learning to build a neural network model based 
 
 *   [Alma Mater](https://en.wikipedia.org/wiki/Alma_Mater_(New_York_sculpture)) 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2014_Columbia_University_Alma_Mater_closeup.jpg/425px-2014_Columbia_University_Alma_Mater_closeup.jpg" width="150">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2014_Columbia_University_Alma_Mater_closeup.jpg/425px-2014_Columbia_University_Alma_Mater_closeup.jpg" width="150"/>
 
 
 *   [Scholars` Lion](http://www.wikicu.com/Scholar%27s_Lion)     
 
-<img src="http://www.wikicu.com/images/2/2c/ScholarsLion.jpg" width="200">
+<img src="http://www.wikicu.com/images/2/2c/ScholarsLion.jpg" width="200"/>
 
 
 *  [The Curl in Uris Hall](https://blogs.cul.columbia.edu/outdoorsculpture/2015/12/22/meadmores-curl-conservation-complete/)
 
 
- <img src="https://blogs.cul.columbia.edu/outdoorsculpture/files/2015/12/curl_20151219-500x333.jpg" width="200">
+ <img src="https://blogs.cul.columbia.edu/outdoorsculpture/files/2015/12/curl_20151219-500x333.jpg" width="200"/>
 
 
 To see and test the model working, please visit: <https://jacquelinearaya.github.io/classifier>.
@@ -201,31 +201,17 @@ for n in range(3):
   print()
 ```
 
-
-    
-![image]({{ "assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg"  |  assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg}})
-    
-    
 ![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg)
 
-![image](/assets/img/portfolio//tf_classifier.jpg)
 
     
-!![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg)
-    
-
-
-{% include aligner.html images="assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg" %}
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg)
     
 
 
-
-    
-![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg)
     
 
-
-    
 
 
 ### Preprocessing raw images
@@ -271,7 +257,7 @@ display.display(display.Image(photo_paths[2], width = 385, height = 375))
 
 
     
-![image]({{page.img}} assets/img/portfolio/tf_classifier_files/tf_classifier_27_0.jpeg)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_27_0.jpeg)
     
 
 
@@ -433,7 +419,7 @@ plotImages(sample_training_images, sample_train_labels, inverse_class)
 
 
     
-![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_44_0.png)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_44_0.png)
     
 
 
@@ -579,8 +565,8 @@ plot_metrics(model_1_history)
 
 
     
-![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_52_0.png)
-    
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_52_0.png)
+
 
 
 Once the model is trained we can make predictions (for simplicity I'll use the test dataset since we don't have a validation set)
@@ -751,7 +737,7 @@ plot_metrics(history)
 
 
     
-![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_73_0.png)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_73_0.png)
     
 
 
@@ -876,7 +862,7 @@ plot_metrics(history_2)
 
 
     
-![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_85_0.png)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_85_0.png)
     
 
 
