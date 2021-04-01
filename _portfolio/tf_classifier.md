@@ -18,13 +18,13 @@ In this notebook I used transfer learning to build a neural network model based 
 
 *   [Scholars` Lion](http://www.wikicu.com/Scholar%27s_Lion)
 
-<img src="http://www.wikicu.com/images/2/2c/ScholarsLion.jpg" width="200"/>
+<img src="http://www.wikicu.com/images/2/2c/ScholarsLion.jpg"/>
 
 
 *  [The Curl in Uris Hall](https://blogs.cul.columbia.edu/outdoorsculpture/2015/12/22/meadmores-curl-conservation-complete/)
 
 
- <img src="https://blogs.cul.columbia.edu/outdoorsculpture/files/2015/12/curl_20151219-500x333.jpg" width="200"/>
+ <img src="https://blogs.cul.columbia.edu/outdoorsculpture/files/2015/12/curl_20151219-500x333.jpg"/>
 
 
 ---
@@ -201,15 +201,15 @@ for n in range(3):
   print()
 ```
 
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg){:height="175px" width="185px"}
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg){:height="100px" width="185px"}
 
 
     
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg){:height="175px" width="185px"}
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg){:height="100px" width="185px"}
     
 
 
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg){:height="175px" width="185px"}
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg){:height="100px" width="185px"}
     
 
 
