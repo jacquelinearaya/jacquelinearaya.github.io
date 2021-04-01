@@ -23,6 +23,9 @@ In this notebook I used transfer learning to build a neural network model based 
 
 ![image](/assets/img/portfolio/tf_classifier_files/curl.jpg)
 
+
+{% include aligner.html images="/assets/img/portfolio/tf_classifier_files/almamater.jpg,/assets/img/portfolio/tf_classifier.jpg,/assets/img/portfolio/tf_classifier_files/curl.jpg" column=3 %}
+
 ---
 
 To see and test the model working, please visit: <https://jacquelinearaya.github.io/classifier>.
