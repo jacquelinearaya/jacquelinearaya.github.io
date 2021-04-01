@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Classifying Columbia University landmarks using a neural network
 feature-img: "assets/img/portfolio/tf_classifier.jpg"
 img: "assets/img/portfolio/tf_classifier.jpg"
