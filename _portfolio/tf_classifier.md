@@ -13,7 +13,7 @@ In this notebook I used transfer learning to build a neural network model based 
 
 *   [Alma Mater](https://en.wikipedia.org/wiki/Alma_Mater_(New_York_sculpture)) 
 
-![image](/assets/img/portfolio/tf_classifier_files/almamater.jpg)
+![image|20%](/assets/img/portfolio/tf_classifier_files/almamater.jpg)
 
 *   [Scholars` Lion](https://www.wikicu.com/Scholar%27s_Lion)
 
