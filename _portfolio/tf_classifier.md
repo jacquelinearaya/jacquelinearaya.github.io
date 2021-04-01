@@ -31,8 +31,6 @@ To see and test the model working, please visit: <https://jacquelinearaya.github
 
 
 
----
-
 
 
 ### Import Tensorflow 2.0 and other libraries
