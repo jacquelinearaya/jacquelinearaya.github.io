@@ -15,7 +15,9 @@ In this notebook I used transfer learning to build a neural network model based 
 
 ![image](/assets/img/portfolio/tf_classifier_files/almamater.jpg)
 
-*   [Scholars` Lion](assets/img/portfolio/tf_classifier.jpg)
+*   [Scholars` Lion](https://www.wikicu.com/Scholar%27s_Lion)
+
+![image](/assets/img/portfolio/tf_classifier.jpg)
 
 *  [The Curl in Uris Hall](https://blogs.cul.columbia.edu/outdoorsculpture/2015/12/22/meadmores-curl-conservation-complete/)
 
