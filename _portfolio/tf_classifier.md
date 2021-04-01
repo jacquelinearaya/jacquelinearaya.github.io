@@ -203,7 +203,7 @@ for n in range(3):
 
 
     
-![jpeg](tf_classifier_files/tf_classifier_22_0.jpeg)
+![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg)
     
 
 
@@ -212,7 +212,7 @@ for n in range(3):
 
 
     
-![jpeg](tf_classifier_files/tf_classifier_22_2.jpeg)
+![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg)
     
 
 
@@ -221,7 +221,7 @@ for n in range(3):
 
 
     
-![jpeg](tf_classifier_files/tf_classifier_22_4.jpeg)
+![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg)
     
 
 
@@ -271,7 +271,7 @@ display.display(display.Image(photo_paths[2], width = 385, height = 375))
 
 
     
-![jpeg](tf_classifier_files/tf_classifier_27_0.jpeg)
+![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_27_0.jpeg)
     
 
 
@@ -433,7 +433,7 @@ plotImages(sample_training_images, sample_train_labels, inverse_class)
 
 
     
-![png](tf_classifier_files/tf_classifier_44_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_44_0.png)
     
 
 
@@ -458,7 +458,6 @@ def plot_metrics(history):
   plt.plot(val_acc, label='Validation Accuracy')
   plt.legend(loc='lower right')
   plt.ylabel('Accuracy')
-  #plt.ylim([min(plt.ylim()),1.05])
   plt.title('Training and Validation Accuracy')
 
   plt.subplot(2, 1, 2)
@@ -581,7 +580,7 @@ plot_metrics(model_1_history)
 
 
     
-![png](tf_classifier_files/tf_classifier_52_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_52_0.png)
     
 
 
@@ -753,7 +752,7 @@ plot_metrics(history)
 
 
     
-![png](tf_classifier_files/tf_classifier_73_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_73_0.png)
     
 
 
@@ -878,7 +877,7 @@ plot_metrics(history_2)
 
 
     
-![png](tf_classifier_files/tf_classifier_85_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_85_0.png)
     
 
 
