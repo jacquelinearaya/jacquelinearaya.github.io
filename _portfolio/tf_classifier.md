@@ -201,15 +201,15 @@ for n in range(3):
   print()
 ```
 
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg =185x175)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg){:height="50%" width="50%"}
 
 
     
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg  =185x175)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg){:height="50%" width="50%"}
     
 
 
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg  =185x175)
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg){:height="50%" width="50%"}
     
 
 
