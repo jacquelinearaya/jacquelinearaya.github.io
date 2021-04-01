@@ -203,7 +203,7 @@ for n in range(3):
 
 
     
-![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg)
+![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg}})
     
 
 
@@ -212,7 +212,7 @@ for n in range(3):
 
 
     
-![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg)
+!![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg}})
     
 
 
@@ -221,7 +221,7 @@ for n in range(3):
 
 
     
-![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg)
+![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg}})
     
 
 
@@ -433,7 +433,7 @@ plotImages(sample_training_images, sample_train_labels, inverse_class)
 
 
     
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_44_0.png)
+![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_44_0.png}})
     
 
 
@@ -465,7 +465,6 @@ def plot_metrics(history):
   plt.plot(val_loss, label='Validation Loss')
   plt.legend(loc='upper right')
   plt.ylabel('Cross Entropy')
-  #plt.ylim([0,1.005])
   plt.title('Training and Validation Loss')
   plt.xlabel('epoch')
   plt.show()
@@ -580,7 +579,7 @@ plot_metrics(model_1_history)
 
 
     
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_52_0.png)
+![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_52_0.png}})
     
 
 
@@ -752,7 +751,7 @@ plot_metrics(history)
 
 
     
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_73_0.png)
+![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_73_0.png}})
     
 
 
@@ -877,7 +876,7 @@ plot_metrics(history_2)
 
 
     
-![png](assets/img/portfolio/tf_classifier_files/tf_classifier_85_0.png)
+![image]({{ page.img |assets/img/portfolio/tf_classifier_files/tf_classifier_85_0.png}})
     
 
 
