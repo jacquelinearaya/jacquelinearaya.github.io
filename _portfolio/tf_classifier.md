@@ -13,18 +13,13 @@ In this notebook I used transfer learning to build a neural network model based 
 
 *   [Alma Mater](https://en.wikipedia.org/wiki/Alma_Mater_(New_York_sculpture)) 
 
-![image|20%](/assets/img/portfolio/tf_classifier_files/almamater.jpg)
-
 *   [Scholars` Lion](https://www.wikicu.com/Scholar%27s_Lion)
-
-![image](/assets/img/portfolio/tf_classifier.jpg)
 
 *  [The Curl in Uris Hall](https://blogs.cul.columbia.edu/outdoorsculpture/2015/12/22/meadmores-curl-conservation-complete/)
 
-![image](/assets/img/portfolio/tf_classifier_files/curl.jpg)
 
 
-{% include aligner.html images="portfolio/tf_classifier_files/almamater.jpg,portfolio/tf_classifier.jpg,portfolio/tf_classifier_files/curl.jpg" column=3 %}
+{% include aligner.html images="portfolio/tf_classifier_files/almamater1.jpg,portfolio/tf_classifier_files/lion1.jpg,portfolio/tf_classifier_files/curl.jpg" column=3 %}
 
 ---
 
