@@ -2,9 +2,9 @@
 layout: post
 title: Classifying Columbia University landmarks using a neural network
 feature-img: "assets/img/portfolio/tf_classifier.jpg"
-img: "assets/img/portfolio/cake.png"
+img: "assets/img/portfolio/tf_classifier.jpg"
 date: 20 June 2020
-tags: [Tensorflow, Keras, Portfolio]
+tags: [Tensorflow, Keras, Classification, Convolutional Networks]
 ---
 
 
@@ -250,7 +250,7 @@ display.display(display.Image(photo_paths[2], width = 385, height = 375))
 ```
 
 
-![jpeg](tf_classifier_files/tf_classifier_26_0.jpeg)
+![jpeg](assets/img/portfolio/tf_classifier_files/tf_classifier_26_0.jpeg)
 
 
 ### Create a Train/Test split of the images paths
@@ -259,7 +259,6 @@ Create train and test splits using Sklearn library
 
 
 ```
-#split train/test for processed images
 from sklearn.model_selection import train_test_split
 train_paths, test_paths = train_test_split(photo_paths)
 ```
@@ -410,7 +409,7 @@ plotImages(sample_training_images, sample_train_labels, inverse_class)
 ```
 
 
-![png](tf_classifier_files/tf_classifier_43_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_43_0.png)
 
 
 ## Models
@@ -442,7 +441,6 @@ def plot_metrics(history):
   plt.plot(val_loss, label='Validation Loss')
   plt.legend(loc='upper right')
   plt.ylabel('Cross Entropy')
-  #plt.ylim([0,1.005])
   plt.title('Training and Validation Loss')
   plt.xlabel('epoch')
   plt.show()
@@ -556,7 +554,7 @@ plot_metrics(model_1_history)
 ```
 
 
-![png](tf_classifier_files/tf_classifier_51_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_51_0.png)
 
 
 Once the model is trained we can make predictions (for simplicity I'll use the test dataset since we don't have a validation set)
@@ -726,7 +724,7 @@ plot_metrics(history)
 ```
 
 
-![png](tf_classifier_files/tf_classifier_72_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_72_0.png)
 
 
 Can we still keep improving the model?
@@ -742,7 +740,7 @@ base_model.trainable = True
 
 
 ```
-#how many layers are in the base model
+#how many layers are in the base model?
 print("Number of layers in the base model: ", len(base_model.layers))
 
 # Fine-tune from this layer onwards
@@ -849,7 +847,7 @@ plot_metrics(history_2)
 ```
 
 
-![png](tf_classifier_files/tf_classifier_84_0.png)
+![png](assets/img/portfolio/tf_classifier_files/tf_classifier_84_0.png)
 
 
 Here, we need to make a decision based on the trade off of accuracy (and overfitting) vs. size of the model. Since the improvement in accuracy is not significantly higher, let's keep the simpler VGG16 base model without trainable layers, having in mind this model would be lighter to load and deploy on a website.
