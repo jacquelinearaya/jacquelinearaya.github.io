@@ -206,8 +206,9 @@ for n in range(3):
 ![image]({{ "assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg"  |  assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg}})
     
     
+![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg)
 
-
+![image](/assets/img/portfolio//tf_classifier.jpg)
 
     
 !![image]({{ page.img }} assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg)
