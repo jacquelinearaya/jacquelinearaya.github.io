@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Classifying Columbia University landmarks using a neural network
-feature-img: "assets/img/portfolio/tf_classifier.jpg"
+img: "assets/img/portfolio/tf_classifier.jpg"
+date: June 2020
 tags: [Tensorflow, Keras, Classification, Convolutional Networks]
 ---
 
