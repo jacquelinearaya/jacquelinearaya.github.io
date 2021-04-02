@@ -32,15 +32,7 @@ layout: default
 
 </article>
 
- <!-- Stuff for jsarr tag  -->
 
-    {% for js in page.jsarr %}
-      <script type="text/javascript">
-  {% include {{ js }} %}
-      </script>
-    {% endfor %}
-
-<!-- End Stuff for jsarr tag  -->
 
 <!-- Disqus -->
 {% if site.disqus_shortname or site.theme_settings.disqus_shortname %}

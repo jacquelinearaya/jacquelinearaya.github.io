@@ -4,8 +4,6 @@ title: Classifying Columbia University landmarks using a neural network
 img: "assets/img/portfolio/tf_classifier.jpg"
 date: June 2020
 tags: [Tensorflow, Keras, Classification, Convolutional Networks]
-jsarr:
-- /assets/js/index.js
 ---
 
 # TensorFlow.js: Using a Keras model in the browser to classify 3 popular Columbia Landmarks
@@ -27,7 +25,7 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
       Upload an image of any of the 3 landmarks:  <input type="file" id="files" name="files[]" multiple />
     </div>
     <div id="predictions"></div>
-    <img id="cat" src="/assets/img/portfolio/tf_classifier.jpg"/>
+    <img id="cat" src="/assets/img/portfolio/tf_classifier.jpg" width=556 height=256/>
   </section>
   <script src="/assets/js/index.js"></script>
 </div>
