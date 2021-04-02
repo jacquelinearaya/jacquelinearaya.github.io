@@ -1,4 +1,4 @@
-import * as tf from '@tensorflow/tfjs';
+import * as tf from '@tensorflow/tfjs-node';
 
 CLASSES = {
   0: 'Alma Mater',
@@ -7,7 +7,7 @@ CLASSES = {
 };
 
 const MODEL_PATH =
-    'https://github.com/jacquelinearaya/jacquelinearaya.github.io/blob/main/assets/js/model_js/model.json';
+    'model_js/model.json';
 
 const IMAGE_SIZE = 256;
 const TOPK_PREDICTIONS = 3;
