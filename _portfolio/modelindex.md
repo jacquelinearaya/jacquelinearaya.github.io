@@ -28,5 +28,5 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
     <img id="cat" src="https://github.com/jacquelinearaya/jacquelinearaya.github.io/blob/main/assets/img/portfolio/tf_classifier.jpg" width=256 height=256 />
   </section>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
-  <script src="{% link assets/js/index.js %}"></script>
+  <script src="https://github.com/jacquelinearaya/jacquelinearaya.github.io/blob/main/assets/js/index.js"></script>
 </div>
