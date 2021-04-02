@@ -197,7 +197,7 @@ for n in range(3):
 
     
 
-{% include aligner.html images="portfolio/tf_classifier_files/tf_classifier_22_0.jpeg,portfolio/tf_classifier_files/tf_classifier_22_2.jpeg,portfolio/tf_classifier_files/tf_classifier_22_4.jpeg" column=3 max-width="200px" %}
+{% include aligner.html images="portfolio/tf_classifier_files/tf_classifier_22_0.jpeg,portfolio/tf_classifier_files/tf_classifier_22_2.jpeg,portfolio/tf_classifier_files/tf_classifier_22_4.jpeg" column=3 max-height="200px" %}
 
 
 ### Preprocessing raw images
