@@ -29,5 +29,5 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
     <div id="predictions"></div>
     <img id="cat" src="https://github.com/jacquelinearaya/jacquelinearaya.github.io/blob/main/assets/img/portfolio/tf_classifier.jpg" width=256 height=256 />
   </section>
-  <script src="{{ '/_include/index.js' | relative_url }}"></script>
+  <script src="{{ '/_include/model_js/index.js' | relative_url }}"></script>
 </div>
