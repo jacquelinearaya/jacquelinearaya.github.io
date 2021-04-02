@@ -1,3 +1,5 @@
+import * as tf from '@tensorflow/tfjs';
+
 CLASSES = {
   0: 'Alma Mater',
   1: 'Scholars` Lion',
