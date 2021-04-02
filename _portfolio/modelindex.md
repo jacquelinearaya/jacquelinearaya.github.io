@@ -25,7 +25,7 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
       Upload an image of any of the 3 landmarks:  <input type="file" id="files" name="files[]" multiple />
     </div>
     <div id="predictions"></div>
-    <img id="cat" src="{{ }}{% assets/img/portfolio/tf_classifier.jpg %}" width=256 height=256 />
+    <img id="cat" src="assets/img/portfolio/tf_classifier.jpg"/>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
   <script src="{% link assets/js/index.js %}"></script>
