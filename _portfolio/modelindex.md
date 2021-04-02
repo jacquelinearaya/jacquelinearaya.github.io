@@ -29,9 +29,4 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
     <div id="predictions"></div>
     <img id="cat" src="assets/img/portfolio/tf_classifier.jpg" width=256 height=256 />
   </section>
-<<<<<<< HEAD
 </div>
-=======
-  <script src="{{ '/_include/model_js/index.js' | relative_url }}"></script>
-</div>
->>>>>>> 11a62a8cbab139d5b8e194f6a40adbf53b44f40b
