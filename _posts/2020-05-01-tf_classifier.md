@@ -2,7 +2,6 @@
 layout: post
 title: Classifying Columbia University landmarks using a neural network
 feature-img: "assets/img/portfolio/tf_classifier.jpg"
-thumbnail: "assets/img/portfolio/tf_classifier.jpg"
 tags: [Tensorflow, Keras, Classification, Convolutional Networks]
 ---
 
@@ -22,7 +21,7 @@ In this notebook I used transfer learning to build a neural network model based 
 
 ---
 
-To see and test the model working, please visit: <https://jacquelinearaya.github.io/classifier>.
+To see and test the model working, please visit: <https://jacquelinearaya.github.io/portfolio/modelindex>.
 
 
 
@@ -1033,4 +1032,4 @@ for name in bin_files:
 
 The bin files along with the model in json format are going to be use to deploy the classifier model on a simple website using TensorFlow.js
 
-Visit: https://jacquelinearaya.github.io/classifier to see the model deployed.
+Visit: https://jacquelinearaya.github.io/portfolio/modelindex to see the model deployed.
