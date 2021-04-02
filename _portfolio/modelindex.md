@@ -5,7 +5,7 @@ img: "assets/img/portfolio/tf_classifier.jpg"
 date: June 2020
 tags: [Tensorflow, Keras, Classification, Convolutional Networks]
 jsarr:
-- model_js/index.js
+- /assets/js/index.js
 ---
 
 # TensorFlow.js: Using a Keras model in the browser to classify 3 popular Columbia Landmarks
@@ -29,5 +29,5 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
     <div id="predictions"></div>
     <img id="cat" src="/assets/img/portfolio/tf_classifier.jpg"/>
   </section>
-  <script src="/_include/model_js/index.js"></script>
+  <script src="/assets/js/index.js"></script>
 </div>
