@@ -13,6 +13,7 @@ const IMAGE_SIZE = 256;
 const TOPK_PREDICTIONS = 3;
 
 let my_model;
+console.log('Hello world');
 const demo = async () => {
   status('Loading model...please wait');
   console.log(datamodel.format);
