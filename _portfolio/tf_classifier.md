@@ -195,17 +195,9 @@ for n in range(3):
   print()
 ```
 
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_0.jpeg){:height="180px" width="485px"}
-
-
-    
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_2.jpeg){:height="180px" width="485px"}
     
 
-
-![image](/assets/img/portfolio/tf_classifier_files/tf_classifier_22_4.jpeg){:height="180px" width="485px"}
-    
-
+{% include aligner.html images="portfolio/tf_classifier_files/tf_classifier_22_0.jpeg,portfolio/tf_classifier_files/tf_classifier_22_2.jpeg,portfolio/tf_classifier_files/tf_classifier_22_4.jpeg" column=3 %}
 
 
 ### Preprocessing raw images
