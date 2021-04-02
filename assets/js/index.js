@@ -5,20 +5,16 @@ CLASSES = {
 };
 
 const MODEL_PATH =
-    'model.json';
-
-const datamodel = fetch("./model.json")
+    '/assets/js/model.json';
 
 const IMAGE_SIZE = 256;
 const TOPK_PREDICTIONS = 3;
 
 let my_model;
-console.log('Hello world');
 const demo = async () => {
   status('Loading model...please wait');
-  console.log(datamodel.format);
 
-  my_model = await tf.loadLayersModel(datamodel);
+  my_model = await tf.loadLayersModel(MODEL_PATH);
 
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
