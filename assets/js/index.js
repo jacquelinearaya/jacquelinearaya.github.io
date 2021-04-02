@@ -5,7 +5,7 @@ CLASSES = {
 };
 
 const MODEL_PATH =
-    'model_js/model.json';
+    'https://github.com/jacquelinearaya/jacquelinearaya.github.io/blob/main/assets/js/model_js/model.json';
 
 const IMAGE_SIZE = 256;
 const TOPK_PREDICTIONS = 3;
