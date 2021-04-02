@@ -14,7 +14,8 @@ const TOPK_PREDICTIONS = 3;
 
 let my_model;
 const demo = async () => {
-  status('Loading model...please wait');
+  status('Loading model...please wait')
+  console.log(datamodel.format);
 
   my_model = await tf.loadLayersModel(datamodel);
 
