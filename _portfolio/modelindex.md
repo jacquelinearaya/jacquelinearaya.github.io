@@ -16,7 +16,7 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
 
 <div class="tfjs-example-container">
   <section>
-    <p class='section-head'>Status</p>
+    <p class='section-head'>Status:</p>
     <div id="status"></div>
   </section>
   <section>
@@ -25,7 +25,7 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
       Upload an image of any of the 3 landmarks:  <input type="file" id="files" name="files[]" multiple />
     </div>
     <div id="predictions"></div>
-    <img id="cat" src="/assets/img/portfolio/tf_classifier.jpg" width=556 height=256/>
+    <img id="cat" src="/assets/img/portfolio/tf_classifier.jpg" width=456 height=256/>
   </section>
   <script src="/assets/js/index.js"></script>
 </div>
