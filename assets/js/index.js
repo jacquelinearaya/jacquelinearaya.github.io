@@ -21,7 +21,7 @@ const demo = async () => {
   // value of `predict`.
   my_model.predict(tf.zeros([1, IMAGE_SIZE, IMAGE_SIZE, 3])).dispose();
 
-  status('');
+  status('Model Loaded');
 
   // Make a prediction through the locally hosted cat.jpg.
   const catElement = document.getElementById('cat');
@@ -30,6 +30,7 @@ const demo = async () => {
     catElement.style.display = '';
   } else {
     catElement.onload = () => {
+      tf.browser.toPixels(catElement);
       predict(catElement);
       catElement.style.display = '';
     }
