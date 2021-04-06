@@ -30,10 +30,10 @@ const demo = async () => {
     catElement.style.display = '';
   } else {
     catElement.onload = () => {
-      tf.browser.toPixels(catElement);
       predict(catElement);
       catElement.style.display = '';
     }
+    catElement.src = "/assets/js/Lion1.jpg"
   }
 
   document.getElementById('file-container').style.display = '';
