@@ -21,7 +21,7 @@ This project is based on [this website](https://github.com/tensorflow/tfjs-examp
   </section>
   <section>
     <p class='section-head'>Model Output</p>
-    <img id="cat" src="/assets/img/portfolio/tf_classifier.jpg" width=456 height=256/>
+    <img id="cat" src="/assets/js/lion1.jpg" width=456 height=256/>
     <div id="file-container" style="display: none">
       Upload an image of any of the 3 landmarks:  <input type="file" id="files" name="files[]" multiple />
     </div>
