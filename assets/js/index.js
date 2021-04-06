@@ -1,7 +1,7 @@
 CLASSES = {
-  0: 'Alma Mater ',
-  1: 'Scholars` Lion ',
-  2: 'The Curl '
+  0: 'Alma Mater',
+  1: 'Scholars` Lion',
+  2: 'The Curl'
 };
 
 const MODEL_PATH =
@@ -33,7 +33,6 @@ const demo = async () => {
       predict(catElement);
       catElement.style.display = '';
     }
-    catElement.src = "/assets/js/Lion1.jpg";
   }
 
   document.getElementById('file-container').style.display = '';
