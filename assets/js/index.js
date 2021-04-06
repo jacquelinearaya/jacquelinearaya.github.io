@@ -1,13 +1,13 @@
 CLASSES = {
-  0: 'Alma Mater',
-  1: 'Scholars` Lion',
-  2: 'The Curl (Business School)'
+  0: 'Alma Mater ',
+  1: 'Scholars` Lion ',
+  2: 'The Curl '
 };
 
 const MODEL_PATH =
     '/assets/js/model.json';
 
-const IMAGE_SIZE = 256;
+const IMAGE_SIZE = 456;
 const TOPK_PREDICTIONS = 3;
 
 let my_model;
