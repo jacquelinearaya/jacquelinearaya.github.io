@@ -33,7 +33,7 @@ const demo = async () => {
       predict(catElement);
       catElement.style.display = '';
     }
-    catElement.src = "/assets/js/Lion1.jpg"
+    catElement.src = "/assets/js/Lion1.jpg";
   }
 
   document.getElementById('file-container').style.display = '';
