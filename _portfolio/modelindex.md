@@ -1,5 +1,5 @@
 ---
-layout: simple
+layout: post
 title: Classifying Columbia University landmarks using a neural network
 img: "assets/img/portfolio/tf_classifier.jpg"
 date: June 2020
@@ -13,6 +13,29 @@ The model predicts the probabilites of any image to be classified as one of the 
 
 
 This project is based on [this website](https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet).
+<style>
+  .pred-container {
+    margin-bottom: 20px;
+  }
+
+  .pred-container > div {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+  }
+
+  .row {
+    display: table-row;
+  }
+  .cell {
+    display: table-cell;
+    padding-right: 20px;
+  }
+
+  #file-container {
+    margin-bottom: 20px;
+  }
+</style>
 
 <div class="tfjs-example-container">
   <section>
