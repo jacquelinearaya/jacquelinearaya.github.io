@@ -163,8 +163,8 @@ filesElement.addEventListener('change', evt => {
       // Fill the image & call predict.
       let img = document.createElement('img');
       img.src = e.target.result;
-      img.width = 556;
-      img.height = 556;
+      img.width = IMAGE_SIZE;
+      img.height = IMAGE_SIZE;
       img.onload = () => predict(img);
     };
 
