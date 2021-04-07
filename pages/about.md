@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "assets/img/columbiajacky.jpg"
+feature-img: "assets/img/columbiajacky_large.jpg"
 tags: [About, Archive]
 ---
 
