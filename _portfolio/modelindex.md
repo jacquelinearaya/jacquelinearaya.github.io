@@ -1,5 +1,5 @@
 ---
-layout: custom
+layout: simple
 title: Classifying Columbia University landmarks using a neural network
 img: "assets/img/portfolio/tf_classifier.jpg"
 date: June 2020
