@@ -1,6 +1,6 @@
 CLASSES = {
   0: 'Alma Mater ',
-  1: 'Scholars` Lion ',
+  1: 'Scholars Lion ',
   2: 'The Curl '
 };
 
@@ -21,7 +21,7 @@ const demo = async () => {
   // value of `predict`.
   my_model.predict(tf.zeros([1, IMAGE_SIZE, IMAGE_SIZE, 3])).dispose();
 
-  status('Model Loaded');
+  status('');
 
   // Make a prediction through the locally hosted cat.jpg.
   const catElement = document.getElementById('cat');
