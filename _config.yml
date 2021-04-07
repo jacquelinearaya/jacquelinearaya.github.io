@@ -10,7 +10,7 @@ favicon: assets/img/json_icon.ico                             # Icon displayed i
 
 # Header and footer text
 header_text: "A personal website of my Data Science projects"  # Change Blog header text
-header_feature_image: assets/img/coffeework.jpg
+header_feature_image: assets/img/coffeework_long.jpg
 footer_text: >
   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
