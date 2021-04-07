@@ -10,6 +10,7 @@ tags: [Tensorflow, Keras, Classification, Convolutional Networks]
 
 Description: This simple website deploys a classifier built with Keras and Tensorflow. Using transfer learning, the classifier is based partly on a well known CNN model, [VGG16](https://neurohive.io/en/popular-networks/vgg16/), to learn how to classify accurately any of these 3 popular Columbia University landmarks.
 The model predicts the probabilites of any image to be classified as one of the 3 landmarks.
+
 Wait for the model to load before uploading an image. Have fun!
 
 

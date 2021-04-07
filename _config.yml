@@ -5,8 +5,8 @@ url: "https://jacquelinearaya.github.io"
 # THEME-SPECIFIC CONFIGURATION
 title: Jacqueline Araya's Portfolio                                    # site's title
 description: "A personal website of my Data Science projects"      # used by search engines
-avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
-favicon: assets/favicon.ico                             # Icon displayed in the tab
+avatar: assets/img/profile.jpg                         # Empty for no avatar in navbar
+favicon: assets/img/code.ico                             # Icon displayed in the tab
 
 # Header and footer text
 header_text: "A personal website of my Data Science projects"  # Change Blog header text
