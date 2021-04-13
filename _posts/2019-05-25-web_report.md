@@ -1,8 +1,9 @@
 ---
-layout: post
-title: Hotel Reviews
-feature-img: "assets/img/portfolio/submarine.png"
-tags: [R, Data Visualization]
+layout:post
+title: "Exploring hotels reviews"
+date: "April 25, 2019"
+feature-img: "assets/img/coffeework_long.jpg"
+tags: [R, Data Visualization, Reviews, Statistical Analysis]
 ---
 
 
@@ -31,7 +32,7 @@ Booking.com has a very nice feature in their review system, not only you can vie
 Each hotel's review has two components: an overall score list of the hotel and its features and the full list of guest reviews, which are breakdown into a written part and an individual score.
 
 
-![Overall hotel score in Booking.com](./overall_score.png){height=500px} ![User posts for a hotel in Booking.com](./post_example.png){height=700px}
+![Overall hotel score in Booking.com](/assets/img/portfolio/web_report_files/overall_score.png){height=500px} ![User posts for a hotel in Booking.com](/assets/img/portfolio/web_report_files/post_example.png){height=700px}
 
 
 I will focus my analysis in the quantitative part of the review, collecting the overall and individual scores. The overall score is calculated with at least 5 reviews and it's based on the last 24 months reviews. 
@@ -52,6 +53,9 @@ The collection of data was made with a self-coded web scraping script written in
 Aditionally, a third python script was needed to scrape the number of stars of each hotel in the site, and was later incorporated into the hotels dataframe.
 
 These files, along with the raw data can be found in my GitHub Repository: [Github Repo](https://github.com/jacquelinearaya/StatsGR5293_project).
+
+
+### Hotels Dataframe
 
 
 ```r
@@ -75,6 +79,135 @@ hotels = hotels_df %>%
 hotels = hotels[!duplicated(hotels$hotel_id),]
 
 sort_hvars = c("hotel_id","hotel_name","hotel_address","city","hotel_stars","review_score","cleanliness","comfort", "location", "services","staff","value_formoney","wifi","reviews")
+
+hotels = hotels[,sort_hvars]
+
+kable(head(hotels[50:100,]))%>%
+  kable_styling(full_width = T, font_size = 9)%>%
+  row_spec(0, bold = T, background = "#BBE9EF")
+```
+
+<table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> hotel_id </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> hotel_name </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> hotel_address </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> city </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> hotel_stars </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> review_score </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> cleanliness </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> comfort </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> location </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> services </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> staff </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> value_formoney </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> wifi </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> reviews </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:left;"> DoubleTree by Hilton Hotel Los Angeles - Westside </td>
+   <td style="text-align:left;"> 6161 West Centinela Avenue, Culver City, Los Angeles, CA 90230, United States of America </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:right;"> 7.7 </td>
+   <td style="text-align:right;"> 8.0 </td>
+   <td style="text-align:right;"> 7.9 </td>
+   <td style="text-align:right;"> 7.6 </td>
+   <td style="text-align:right;"> 7.7 </td>
+   <td style="text-align:right;"> 8.2 </td>
+   <td style="text-align:right;"> 7.0 </td>
+   <td style="text-align:right;"> 7.4 </td>
+   <td style="text-align:left;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 51 </td>
+   <td style="text-align:left;"> Doubletree by Hilton Los Angeles Downtown </td>
+   <td style="text-align:left;"> 120 South Los Angeles Street, Downtown LA, Los Angeles, CA 90012, United States of America </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:right;"> 7.7 </td>
+   <td style="text-align:right;"> 8.2 </td>
+   <td style="text-align:right;"> 8.0 </td>
+   <td style="text-align:right;"> 7.7 </td>
+   <td style="text-align:right;"> 7.7 </td>
+   <td style="text-align:right;"> 8.2 </td>
+   <td style="text-align:right;"> 6.8 </td>
+   <td style="text-align:right;"> 6.2 </td>
+   <td style="text-align:left;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 52 </td>
+   <td style="text-align:left;"> Downtown Condo with Free Parking </td>
+   <td style="text-align:left;"> W 6th Street and S Bixel Street, Downtown LA, Los Angeles, CA 90017, United States of America </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:left;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 53 </td>
+   <td style="text-align:left;"> Downtown Cosmopolitan Residences </td>
+   <td style="text-align:left;"> E 2nd St, S Main St., Downtown LA, Los Angeles, CA 90012, United States of America </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:right;"> 8.8 </td>
+   <td style="text-align:right;"> 9.1 </td>
+   <td style="text-align:right;"> 9.1 </td>
+   <td style="text-align:right;"> 8.5 </td>
+   <td style="text-align:right;"> 9.1 </td>
+   <td style="text-align:right;"> 8.7 </td>
+   <td style="text-align:right;"> 8.3 </td>
+   <td style="text-align:right;"> 8.2 </td>
+   <td style="text-align:left;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 54 </td>
+   <td style="text-align:left;"> Downtown LA Dazzling Apartment </td>
+   <td style="text-align:left;"> Wilshire Blvd and South Bixel Street, Downtown LA, Los Angeles, CA 90017, United States of America </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 7.6 </td>
+   <td style="text-align:right;"> 8.2 </td>
+   <td style="text-align:right;"> 7.5 </td>
+   <td style="text-align:right;"> 8.0 </td>
+   <td style="text-align:right;"> 7.1 </td>
+   <td style="text-align:right;"> 7.7 </td>
+   <td style="text-align:right;"> 7.3 </td>
+   <td style="text-align:right;"> 7.5 </td>
+   <td style="text-align:left;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 55 </td>
+   <td style="text-align:left;"> Downtown LA Gorgeous Resort Style Suite </td>
+   <td style="text-align:left;"> S. Bixel Street and W. 7th Street, Downtown LA, Los Angeles, CA 90017, United States of America </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:right;"> 7.3 </td>
+   <td style="text-align:right;"> 6.9 </td>
+   <td style="text-align:right;"> 7.5 </td>
+   <td style="text-align:right;"> 8.1 </td>
+   <td style="text-align:right;"> 7.0 </td>
+   <td style="text-align:right;"> 7.5 </td>
+   <td style="text-align:right;"> 7.1 </td>
+   <td style="text-align:right;"> 10.0 </td>
+   <td style="text-align:left;"> 1 </td>
+  </tr>
+</tbody>
+</table>
+
+
+```r
 desc_hotels = data.frame(Variable =sort_hvars, 
                          Description = c(
                            "Given hotel ID",
@@ -108,15 +241,16 @@ desc_hotels = data.frame(Variable =sort_hvars,
                            "Factor with 2 levels: 0 for no posts"
                          ))
 
+
 kable(desc_hotels) %>%
-  kable_styling(full_width = F) %>%
+  kable_styling(full_width = F, font_size = 9) %>%
   add_header_above(c("", "Hotel Table", "6,738 Observations"), bold = TRUE, align = "c" ) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF") %>%
   column_spec(2, width = "30em") %>%
   column_spec(3, width = "30em")
 ```
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
 <tr>
 <th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
@@ -203,6 +337,9 @@ kable(desc_hotels) %>%
 </tbody>
 </table>
 
+### Guest Reviews Dataframe
+
+
 
 ```r
 posts = read_csv("./posts_2.csv")
@@ -212,8 +349,86 @@ posts = posts %>%
          review_country= as.factor(review_country),
          review_date = as.Date(review_date, format= "%B %d,%Y"))
 
-#str(posts)
 sort_pvars = c("hotel_id","city","review_id","review_score","review_date","review_country", "review_number")
+
+posts = posts[,sort_pvars]
+
+kable(head(posts[50:100,]))%>%
+  kable_styling(full_width = T, font_size = 9)%>%
+  row_spec(0, bold = T, background = "#BBE9EF")
+```
+
+<table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> hotel_id </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> city </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> review_id </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> review_score </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> review_date </th>
+   <th style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;"> review_country </th>
+   <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> review_number </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:right;"> 114 </td>
+   <td style="text-align:right;"> 7.9 </td>
+   <td style="text-align:left;"> 2018-04-04 </td>
+   <td style="text-align:left;"> China </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:right;"> 115 </td>
+   <td style="text-align:right;"> 10.0 </td>
+   <td style="text-align:left;"> 2018-04-03 </td>
+   <td style="text-align:left;"> Australia </td>
+   <td style="text-align:right;"> 25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:right;"> 116 </td>
+   <td style="text-align:right;"> 4.6 </td>
+   <td style="text-align:left;"> 2018-04-02 </td>
+   <td style="text-align:left;"> United States of America </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:right;"> 117 </td>
+   <td style="text-align:right;"> 7.9 </td>
+   <td style="text-align:left;"> 2018-03-30 </td>
+   <td style="text-align:left;"> United States of America </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:right;"> 118 </td>
+   <td style="text-align:right;"> 8.3 </td>
+   <td style="text-align:left;"> 2018-03-29 </td>
+   <td style="text-align:left;"> Belgium </td>
+   <td style="text-align:right;"> 39 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> LosAngeles </td>
+   <td style="text-align:right;"> 119 </td>
+   <td style="text-align:right;"> 10.0 </td>
+   <td style="text-align:left;"> 2018-03-28 </td>
+   <td style="text-align:left;"> United States of America </td>
+   <td style="text-align:right;"> 34 </td>
+  </tr>
+</tbody>
+</table>
+
+```r
 desc_posts = data.frame(Variable = sort_pvars, 
                          Description = c(
                            "Given hotel ID",
@@ -234,14 +449,14 @@ desc_posts = data.frame(Variable = sort_pvars,
                          ))
 
 kable(desc_posts) %>%
-  kable_styling(full_width = F) %>%
+  kable_styling(full_width = F, font_size = 9) %>%
   add_header_above(c("", "Guest's score Table", "1,712,086 Observations"), bold = TRUE, align = "c" ) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF") %>%
   column_spec(2, width = "30em") %>%
   column_spec(3, width = "30em")
 ```
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
 <tr>
 <th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
@@ -338,11 +553,11 @@ posts = posts %>%
 colSums(is.na(hotels)) %>%
   sort(decreasing=TRUE) %>%
   kable(col.names = "Missing") %>%
-  kable_styling(full_width = F, position = "center",bootstrap_options = c("striped", "hover"), font_size = 7) %>%
+  kable_styling(full_width = F, position = "center",bootstrap_options = c("striped", "hover"), font_size = 9) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF")
 ```
 
-<table class="table table-striped table-hover" style="font-size: 7px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -432,7 +647,7 @@ ggplot(tidyhotels, aes(x = fct_relevel(key,sort_hvars[-c(1,4)]), y = fct_rev(cit
   theme(axis.text.x=element_text(angle=60,hjust=1)) 
 ```
 
-![](web_report_files/figure-html/obsbycity-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/obsbycity-1.png" style="display: block; margin: auto;" />
 
 ```r
 hotels %>%
@@ -440,16 +655,31 @@ hotels %>%
   mutate(citycount = fct_infreq(city)) %>%
   ggplot(aes(x = fct_rev(citycount))) + 
   geom_bar(width = 0.7, color = "black", fill = "thistle") +
-  labs(x="City",y= "Number of scores without NA's") +
+  labs(x="City",y= "Number of hotel scores per city without NA's") +
   theme(panel.grid.major.x = element_blank())+
-  theme_bw(12)+
+  theme_gray(12)+
   coord_flip() 
 ```
 
-![](web_report_files/figure-html/obsbycity-2.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/obsbycity-2.png" style="display: block; margin: auto;" />
 
-Then, we have a number of observations with missing stars, specifically 2,775 (41% of the hotels). 
 
+```r
+#Plot to see how many posts have each city
+posts %>%
+  filter(!is.na(review_country)) %>%
+  mutate(citycount = fct_infreq(city)) %>%
+  ggplot(aes(x = fct_rev(citycount))) + 
+  geom_bar(width = 0.7, color = "black", fill = "thistle") +
+  theme(panel.grid.major.x = element_blank())+
+  theme_gray(12)+
+  scale_y_continuous(breaks =seq(0,700000,100000), labels = scales::comma) +
+  xlab("City") +
+  ylab("Number of individual scores per city without NA's") +
+  coord_flip()
+```
+
+<img src="/assets/img/portfolio/web_report_files/postsbycity-1.png" style="display: block; margin: auto;" />
 
 Since the goal of this study is to explore differences within countries reviews, we are going to work only with hotels with complete data (2,863) that accounts for more than 1 million guests reviews in total.
 
@@ -460,11 +690,11 @@ Since the goal of this study is to explore differences within countries reviews,
 colSums(is.na(posts)) %>%
   sort(decreasing=TRUE)  %>%
   kable(col.names = "Missing") %>%
-  kable_styling(full_width = F, position = "center",bootstrap_options = c("striped", "hover")) %>%
+  kable_styling(full_width = F, position = "center",bootstrap_options = c("striped", "hover"), font_size = 9) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF")
 ```
 
-<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -509,23 +739,6 @@ colSums(is.na(posts)) %>%
 In fact, we can see from the Reviews Dataframe that only 1 review score is missing and only 1,109 countries out of 1,712,086 observations (0.06%), so I'm going to focus the analysis on this data mainly.
 
 
-```r
-#Plot to see how many posts have each city
-posts %>%
-  filter(!is.na(review_country)) %>%
-  mutate(citycount = fct_infreq(city)) %>%
-  ggplot(aes(x = fct_rev(citycount))) + 
-  geom_bar(width = 0.7, color = "black", fill = "thistle") +
-  theme(panel.grid.major.x = element_blank())+
-  theme_bw(16)+
-  scale_y_continuous(breaks =seq(0,700000,100000), labels = scales::comma) +
-  xlab("City") +
-  ylab("Number of scores per city without NA's") +
-  coord_flip()
-```
-
-![](web_report_files/figure-html/postsbycity-1.png)<!-- -->
-
 
 
 ```r
@@ -540,11 +753,11 @@ tidystars <- hotels %>%
 ```
 
 
-## Results
+## Analysis
 
 ### Hotel average review scores
 
-First, we analize the hotel-level scores, this is, the average of the scores an hotel gets among all its guests that wrote a review and evaluate it. In other words, each observation correspond to an hotel in the sample. 
+First, we analize the hotel-level scores, this is, the average of the scores an hotel gets among all its guests that wrote a review and evaluated it. In other words, each observation correspond to an hotel in the sample. 
 
 How does this overall score distributes among hotels?
 
@@ -556,10 +769,10 @@ hotels %>%
     geom_histogram(binwidth = 0.05, color = "black", fill = "#009E73") +
     labs(x = "Hotel overall score") +
     scale_x_continuous(breaks = seq(2,10,0.5)) +
-    theme_gray(16)
+    theme_gray(12)
 ```
 
-![](web_report_files/figure-html/overallhist-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/figure-html/overallhist-1.png" style="display: block; margin: auto;" />
 
 ```r
 #summary(hotels$review_score)
@@ -569,15 +782,14 @@ hotels %>% summarise_at('review_score',list('Min.' = min,
                                             'Median' = median,
                                             'Mean' = mean,
                                             '3rd. Quartile' = function(x,...) quantile(x,probs = 0.75,...),
-                                            'Max.'=max,
-                                            "NA's" = function(x,...) sum(is.na(x))),na.rm = T) %>%
+                                            'Max.'=max), na.rm = T) %>%
   gather(key = "statistic",value = "value",convert = TRUE) %>%
-  kable(col.names = c("Statistic","Value")) %>% 
-  kable_styling(full_width = F, position = "center") %>%
+  kable(col.names = c("Statistic","Value"), digits = 2) %>% 
+  kable_styling(full_width = F, position = "center", font_size = 9) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF")
 ```
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> Statistic </th>
@@ -587,36 +799,32 @@ hotels %>% summarise_at('review_score',list('Min.' = min,
 <tbody>
   <tr>
    <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Min. </td>
-   <td style="text-align:right;"> 4.00000 </td>
+   <td style="text-align:right;"> 4.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 1st. Quartile </td>
-   <td style="text-align:right;"> 7.80000 </td>
+   <td style="text-align:right;"> 7.80 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Median </td>
-   <td style="text-align:right;"> 8.40000 </td>
+   <td style="text-align:right;"> 8.40 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Mean </td>
-   <td style="text-align:right;"> 8.20723 </td>
+   <td style="text-align:right;"> 8.21 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 3rd. Quartile </td>
-   <td style="text-align:right;"> 8.80000 </td>
+   <td style="text-align:right;"> 8.80 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Max. </td>
-   <td style="text-align:right;"> 10.00000 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> NA's </td>
-   <td style="text-align:right;"> 3875.00000 </td>
+   <td style="text-align:right;"> 10.00 </td>
   </tr>
 </tbody>
 </table>
 
-The distribution of hotel overall scores are left-skewed, with high concentration on the high portion of the scale, considering the review scores range from 1 to 10. The hotel with the lowest score has a rating of 4.0, whereas 50% of hotels have a score of 8.40 or higher.
+The distribution of hotel overall scores are left-skewed, with high concentration on the high portion of the scale, considering the scores range from 1 to 10. The hotel with the lowest score has a rating of 4.0, whereas 50% of hotels have a score of 8.40 or higher.
 
 How do this overall score distributes by city?
 
@@ -634,15 +842,14 @@ ggplot(hotels, aes(x=city, y=review_score)) +
   scale_x_discrete(limits=meds$city[order(meds$med)]) +
   coord_flip()+
   labs(y="Hotel overall score",x="City")+
-  theme_gray(16)
+  theme_gray(12)
 ```
 
-![](web_report_files/figure-html/postscountries-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/figure-html/postscountries-1.png" style="display: block; margin: auto;" />
  
 The distribution of hotel overall scores are dependent on the city. When plotting boxplots of hotel score per city, data seems to suggest that hotels in more expensive cities such as San Francisco and Honolulu tend to have lower scores than others such as Chicago or Orlando, but this is a just a general perception.
 
 Now we can look the breakdown of this overall score in its different categories, do they distribute differently?
-Distributions of different scores:
 
 
 ```r
@@ -653,15 +860,15 @@ tidyhotels %>%
     geom_histogram(binwidth = 0.05, fill = "#009E73") +
     xlab("Hotel overall score")+
     facet_wrap(~key, ncol=2) +
-    theme_gray(16)
+    theme_gray(12)
 ```
 
-![](web_report_files/figure-html/hist-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/figure-html/hist-1.png" style="display: block; margin: auto;" />
 
-Similar pattern can be shown when disaggregating the hotel overall scores into the different dimensions the website allows guests to evaluate the hotels. Guests tend to provide lower scores to value, while providing higher scores to location. Interestingly, there is a high concentration of hotels that obtain a perfect score in the Wi-Fi dimension.
+A similar pattern can be shown when disaggregating the hotel overall score into the different features the website allows guests to evaluate the hotels. Guests tend to provide lower scores to value, while providing higher scores to location. Interestingly, there is a high concentration of hotels that obtain a perfect score in the Wi-Fi dimension.
 
 
-Hotel overall Score by number of Stars
+What do we expect if we plot the hotel's overall score by number of stars?
 
 
 ```r
@@ -673,223 +880,33 @@ hotels %>%
   coord_flip() +
   xlab("Hotel Stars")+
   ylab("Hotel overall score")+
-  theme_gray(16)
+  theme_gray(12)
 ```
 
-![](web_report_files/figure-html/starscity-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/figure-html/starscity-1.png" style="display: block; margin: auto;" />
 
-One may expect that hotel overall scores reflect to some degree the quality of an hotel. At the same time, hotels are categorized by the website on the attribute "stars", from 1 (lowest) to 5 (highest), which aims to summarize the amenities and level of service expected from the hotel. The data shows a strong relationship between the hotel overall score, provided by guests, and the number of stars that the hotel has. Interestingly, high stars hotels are distributed only in the higher portion of the scale (most hotels of 4 or more stars have a score higher than 7); whereas hotels with 1 or 2 stars not only have lower scores in average, but also are distributed over a wider range. 
+One may expect that hotel's overall scores reflect to some degree the quality of an hotel. At the same time, hotels are categorized by the website on the attribute "stars", from 1 (lowest) to 5 (highest), which aims to reveal the amenities and level of service expected from the hotel. The data shows a strong relationship between the hotel overall score, provided by guests, and the number of stars that the hotel has. Interestingly, high stars hotels are distributed only in the higher portion of the scale (most hotels of 4 or more stars have a score higher than 7); whereas hotels with 1 or 2 stars not only have lower scores in average, but also are distributed over a wider range. 
 
 
-```r
-# library(ggridges)
-# hotels %>% 
-#   select(-c(hotel_id, hotel_name, hotel_address, hotel_stars, city)) %>%  
-#   gather("score","value") %>%
-#   filter(!is.na(value)) %>%
-#   mutate(score = as.factor(score)) %>% 
-#   group_by(score)
-# 
-# #histogram per score to get the counts
-#   ggplot(aes(x=rep(1:10,3638), y=value, group=score)) +
-#   geom_density_ridges(stat = "identity", scale = 1)
-```
+### Individual guest's review scores
 
-### Individual guests' review scores
+Now, let's analize the individual scores provided by guests. In these analysis each observation correponds to one review provided by a guest to an hotel.
 
-Second, we analize individual scores that each guest provided to the reviewed hotel. In these analysis each observation correponds to one review provided by a guest to an hotel.
-
-Distribution of guests' scores:
+Distribution of guest's scores:
 
 ```r
 ggplot(posts, aes(review_score))+
   geom_histogram(binwidth = 0.1, color = "black", fill = "#009E73") +
   xlab("Review Score")+
   scale_y_continuous(labels = scales::comma)+
-  theme_gray(16)
+  theme_gray(12)
 ```
 
-![](web_report_files/figure-html/pscores-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/figure-html/pscores-1.png" style="display: block; margin: auto;" />
 
-```r
-# summary(as.factor(posts$review_score))
+Here we see an interesting and somewhat odd distribution due to some gaps between certain values of the score that the guests give to an hotel. If we look closer, there is indeed values that simply doesn't happen, but also there is an unexpected behaviour in the amount of values for integer scores: 3, 4, 5, 6, 7, 8 and 9. For review type of values one would expect that people tend to give integer scores or half scores (i.e. 5.5, 8.5, 9.5) but not so much in between, like 9.1 or 2.4. The most pausible explanation for these results resides in the review system of Booking.com, where they present to guests the option to give from 1 to 4 smiley faces for each category and then taking the average of reviewed items (as mentioned in the introduction). With this system, you can easily get the distribution of scores we are observing since each category can get a score in [0, 2.5, 5, 7.5, 10] only, so for example, if you rank 5 with 3 faces and 1 with 1 you'll get a score of ~6.7. This is why we get a higuer amount of scores with a decimal point rather than integer ones.
 
-posts %>%
-  group_by(review_score) %>%
-  summarise(n = n()) %>%
-  kable() %>%
-  kable_styling(full_width = F, position = "center",bootstrap_options = c("striped", "hover")) %>%
-  column_spec(1, bold = T, border_right = T, background = "#BBE9EF")
-```
-
-<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:right;"> review_score </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 2.5 </td>
-   <td style="text-align:right;"> 19327 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 2.9 </td>
-   <td style="text-align:right;"> 13618 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 3.0 </td>
-   <td style="text-align:right;"> 300 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 3.1 </td>
-   <td style="text-align:right;"> 52 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 3.3 </td>
-   <td style="text-align:right;"> 21215 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 3.5 </td>
-   <td style="text-align:right;"> 436 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 3.8 </td>
-   <td style="text-align:right;"> 26729 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 4.0 </td>
-   <td style="text-align:right;"> 604 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 4.2 </td>
-   <td style="text-align:right;"> 29005 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 4.4 </td>
-   <td style="text-align:right;"> 91 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 4.5 </td>
-   <td style="text-align:right;"> 699 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 4.6 </td>
-   <td style="text-align:right;"> 33687 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 5.0 </td>
-   <td style="text-align:right;"> 44849 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 5.4 </td>
-   <td style="text-align:right;"> 46897 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 5.5 </td>
-   <td style="text-align:right;"> 970 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 5.6 </td>
-   <td style="text-align:right;"> 123 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 5.8 </td>
-   <td style="text-align:right;"> 56104 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 6.0 </td>
-   <td style="text-align:right;"> 1196 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 6.3 </td>
-   <td style="text-align:right;"> 66142 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 6.5 </td>
-   <td style="text-align:right;"> 1346 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 6.7 </td>
-   <td style="text-align:right;"> 79871 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 6.9 </td>
-   <td style="text-align:right;"> 187 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 7.0 </td>
-   <td style="text-align:right;"> 1796 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 7.1 </td>
-   <td style="text-align:right;"> 100497 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 7.5 </td>
-   <td style="text-align:right;"> 144220 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 7.9 </td>
-   <td style="text-align:right;"> 118685 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 8.0 </td>
-   <td style="text-align:right;"> 1964 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 8.1 </td>
-   <td style="text-align:right;"> 221 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 8.3 </td>
-   <td style="text-align:right;"> 128074 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 8.5 </td>
-   <td style="text-align:right;"> 1963 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 8.8 </td>
-   <td style="text-align:right;"> 130543 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 9.0 </td>
-   <td style="text-align:right;"> 2087 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 9.2 </td>
-   <td style="text-align:right;"> 148288 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 9.4 </td>
-   <td style="text-align:right;"> 258 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 9.5 </td>
-   <td style="text-align:right;"> 2368 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 9.6 </td>
-   <td style="text-align:right;"> 167818 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> 10.0 </td>
-   <td style="text-align:right;"> 319855 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> NA </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-</tbody>
-</table>
-
-Here we see an interesting and somewhat odd distribution due to some gaps between certain values of the score that the guests give to an hotel. If we look closer to a summary of this variable, there is indeed values that simply doesn't happen, but also there is an unexpected behaviour in the amount of values for integer scores: 3, 4, 5, 6, 7, 8 and 9. For review type of values one would expect that people tend to give integer scores or half scores (i.e. 5.5, 8.5, 9.5) but not so much in between, like 9.1 or 2.4. The most pausible explanation for these results resides in the review system of Booking.com, where they present to guests the option to give from 1 to 4 smiley faces for each category and then taking the average of reviewed items (as mentioned in the introduction). With this system, you can easily get the distribution of scores we are observing since each category can get a score in [0, 2.5, 5, 7.5, 10] only, so for example, if you rank 5 with 3 faces and 1 with 1 you'll get a score of ~6.7. This is why we get a higuer amount of scores with a decimal point rather than integer ones.
-
-
-
-Distribution of guest's score by city:
+Now, let's break down the guest's score by city:
 
 ```r
 #By city
@@ -898,23 +915,22 @@ pmeds = posts %>%
   group_by(city) %>% 
   summarise(med = median(review_score, na.rm = TRUE))
 
-  ggplot(posts, aes(x=city, y=review_score)) +
-    geom_boxplot()+
-    scale_x_discrete(limits=pmeds$city[order(pmeds$med)]) +
-    coord_flip()+
-    labs(x="Review Score",y="City")+
-    theme_gray(16)
+ggplot(posts, aes(x=city, y=review_score)) +
+  geom_boxplot()+
+  scale_x_discrete(limits=pmeds$city[order(pmeds$med)]) +
+  coord_flip()+
+  labs(x="Review Score",y="City")+
+  theme_gray(12)
 ```
 
-![](web_report_files/figure-html/postscountries2-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/postscountries2-1.png" style="display: block; margin: auto;" />
 
 Compared to the distribution of hotel scores by cities, when analyzing individuals' scores, we can observe how scores are more widely distributed, and mean differences between cities become smaller compared to differences in hotel-level scores.
 
 ### Country differences in guest's review scores
 
-In the following, we focus on exploring if there's evidence of differences accross countries for the individual guest's review score. 
+In the following, I'll explore if there's evidence of differences accross countries for the individual guest's review scores. 
 
-Guest's review score mean by country with its standard error:
 
 
 ```r
@@ -933,9 +949,9 @@ posts %>%
   geom_point(color="#883A8B") +
   geom_segment(aes(y = reorder(review_country,med),x = lb,xend = ub,yend = reorder(review_country,med)),color = "#883A8B") + 
   ylab("Country") +
-  xlab("Review Score Mean") +
+  xlab("Guest's review scores mean with standard error") +
   labs(title="Mean of guest review score for countries\nwith more than 1,000 reviews")+
-  theme_bw(14) +
+  theme_bw(12) +
    theme(axis.text.y = element_text(size = rel(.75)),
     	axis.ticks.y = element_blank(),
         axis.title.x = element_text(size = rel(.75)),
@@ -944,16 +960,13 @@ posts %>%
         panel.grid.minor.x = element_blank()) 
 ```
 
-![](web_report_files/figure-html/medcountry-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/medcountry-1.png" style="display: block; margin: auto;" />
 
-The graph shows how countries get different score's means and given the high number of reviews per country (filter on more than 5,000) there's a good approximation for the mean standard error. The bar error help us noting that as the mean goes down by country its error bar is not overlapping within different sections of the scale, for example, if we compare the countries with means around 7.5 and 7.75 there's practically no overlapping with the ones in the range 7.75 and 8 (i.e. in 0.5 difference of score).
+The graph shows the different scores means by country and given the high number of reviews per country (filter on more than 1,000) there's a good approximation for the mean standard error. The bar error help us noting that as the mean goes down by country its error bar is not overlapping within different sections of the scale, for example, if we compare the countries with means around 7.5 and 7.75 there's practically no overlapping with the ones in the range 7.75 and 8 (i.e. with a 0.5 difference in score).
 
-This plot is probably the most revealing one of the sample, as it let us see and compare across countries.
+This plot is probably the most revealing one, as it let us see and compare across countries.
 
-
-
-
-Guest's review score standard deviation by country:
+Now, let's check the guest's review score standard deviation by country:
 
 
 ```r
@@ -968,7 +981,7 @@ posts %>%
   ylab("Country") +
   xlab("Standard Deviation of review score") +
   labs(title="Standard Deviation of guest review score\nfor countries with more than 1,000 reviews")+
-  theme_bw(14) +
+  theme_bw(12) +
    theme(axis.text.y = element_text(size = rel(.75)),
     	axis.ticks.y = element_blank(),
         axis.title.x = element_text(size = rel(.75)),
@@ -977,14 +990,14 @@ posts %>%
         panel.grid.minor.x = element_blank()) 
 ```
 
-![](web_report_files/figure-html/sdcountry-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/sdcountry-1.png" style="display: block; margin: auto;" />
 
-Here we see evidence that the variation on how people review hotels may indeed be different accross countries. A closer look at the plot show us that, for example, for countries like Saudi Arabia, Kuwait, Pakistan, Turkey, India, Egypt, United Arab Emirates and Qatar, to name a few, there are travelers who rate very high and travelers that doesn't seem to enjoy their stay very much. In contrast, countries like Germany, Austria, Switzerland, Belgium, Luxembourg, Netherland and Finland, seem to review in a very similar way.
+Here we see evidence that the variation on how people review hotels may indeed be different accross countries on this sample. A closer look at the plot show us that, for example, for countries like Saudi Arabia, Kuwait, Pakistan, Turkey, India, Egypt, United Arab Emirates and Qatar, to name a few, there are travelers who rate very high and travellers that doesn't seem to enjoy their stay very much. In contrast, countries like Germany, Austria, Switzerland, Belgium, Luxembourg, The Netherlands and Finland, seem to review in a very similar way.
 
-Not considering the United States, the pattern is very intriguing for this sample: countries from very close regions of the world (in this case the Middle East and Northern Europeans) tend to review in related "ways". 
+Not considering the United States, the pattern is very intriguing for this sample: countries from very close regions of the world (in this case the Middle East and Northern Europe) tend to review with a similar criterion. 
 
 
-
+Next, I am curious to see if the mean score by country changes with the number of stars of a hotel. Let's explore the mean score and its error for hotels in the category of 4 or 5 stars and in the category of 2 or 3:
 
 
 ```r
@@ -1004,129 +1017,71 @@ post_filterstars = posts %>%
   mutate(lb = mean -sd/sqrt(n), ub = mean +sd/sqrt(n))
 ```
 
-Next, we are curious to see if the mean score by country changes with the number of stars of a hotel. We present the mean score and its error for hotels in the category of 4 or 5 stars and in the category of 2 or 3:
 
 
 ```r
-post_filterstars %>%
-  filter((review_country %in% n5000$review_country) & (hotel_stars==5 | hotel_stars==4)) %>%
-  ggplot(aes(mean, reorder(review_country,mean), color=hotel_stars)) +
-  geom_point() +
-  labs(x="Review Score mean", y="Country",color = "Hotel stars", title="Guest's review score mean by country for \n4 and 5 star hotels with more than 5,000 reviews") +
-  scale_x_continuous(breaks = seq(5,10,0.5),limits = c(4.5,9)) +
-  geom_segment(aes(y = reorder(review_country,mean),x = lb,xend = ub,yend = reorder(review_country,mean),color = hotel_stars)) + 
-  theme_bw(14) +
-   theme(axis.text.y = element_text(size = rel(.75)),
-    	axis.ticks.y = element_blank(),
-        axis.title.x = element_text(size = rel(.75)),
-        panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(size = 0.7),
-        panel.grid.minor.x = element_blank()) 
+s1 =  post_filterstars %>%
+      filter((review_country %in% n5000$review_country) & (hotel_stars==1 | hotel_stars==2)) %>%
+      ggplot(aes(mean, reorder(review_country,mean), color=hotel_stars)) +
+      geom_point() +
+      labs(x="Review Score mean", y="Country",color = "Hotel stars", title="Guest's review score mean by country for \n1 and 2 star hotels with more than 5,000 reviews") +
+      geom_segment(aes(y = reorder(review_country,mean),x = lb,xend = ub,yend = reorder(review_country,mean),color = hotel_stars)) + 
+      scale_x_continuous(breaks = seq(5,10,0.5),limits = c(4.5,9)) +
+      theme_bw(12) +
+       theme(axis.text.y = element_text(size = rel(.75)),
+        	axis.ticks.y = element_blank(),
+            axis.title.x = element_text(size = rel(.75)),
+            panel.grid.major.x = element_blank(),
+            panel.grid.major.y = element_line(size = 0.7),
+            panel.grid.minor.x = element_blank())
+
+s2 = post_filterstars %>%
+      filter((review_country %in% n5000$review_country) & (hotel_stars==5 | hotel_stars==4)) %>%
+      ggplot(aes(mean, reorder(review_country,mean), color=hotel_stars)) +
+      geom_point() +
+      labs(x="Review Score mean", y="Country",color = "Hotel stars", title="Guest's review score mean by country for \n4 and 5 star hotels with more than 5,000 reviews") +
+      scale_x_continuous(breaks = seq(5,10,0.5),limits = c(4.5,9)) +
+      geom_segment(aes(y = reorder(review_country,mean),x = lb,xend = ub,yend = reorder(review_country,mean),color = hotel_stars)) + 
+      theme_bw(12) +
+       theme(axis.text.y = element_text(size = rel(.75)),
+        	axis.ticks.y = element_blank(),
+            axis.title.x = element_text(size = rel(.75)),
+            panel.grid.major.x = element_blank(),
+            panel.grid.major.y = element_line(size = 0.7),
+            panel.grid.minor.x = element_blank())
+
+ 
+gridExtra::grid.arrange(s1, s2, ncol=2)
 ```
 
-![](web_report_files/figure-html/countrystars2-1.png)<!-- -->
-
-```r
-post_filterstars %>%
-  filter((review_country %in% n5000$review_country) & (hotel_stars==1 | hotel_stars==2)) %>%
-  ggplot(aes(mean, reorder(review_country,mean), color=hotel_stars)) +
-  geom_point() +
-  labs(x="Review Score mean", y="Country",color = "Hotel stars", title="Guest's review score mean by country for \n1 and 2 star hotels with more than 5,000 reviews") +
-  geom_segment(aes(y = reorder(review_country,mean),x = lb,xend = ub,yend = reorder(review_country,mean),color = hotel_stars)) + 
-  scale_x_continuous(breaks = seq(5,10,0.5),limits = c(4.5,9)) +
-  theme_bw(14) +
-   theme(axis.text.y = element_text(size = rel(.75)),
-    	axis.ticks.y = element_blank(),
-        axis.title.x = element_text(size = rel(.75)),
-        panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(size = 0.7),
-        panel.grid.minor.x = element_blank()) 
-```
-
-![](web_report_files/figure-html/countrystars2-2.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/countrystars2-1.png" style="display: block; margin: auto;" />
 
 Convincingly, even if we control by the number of stars a hotel is categorized into, the patterns of differences by countries still remain true in this sample. One can notice this by looking at the first and last country in each plot and observe that the mean is consistenly different and there's almost no overlapping considering the error when splitting by stars.
 
 
-Taking advantage of the created variable "continent" we are interested to find if the differences we observed are replicable in broader regions of procedence, such as continent. The sample distributes by continent as follows:
+Taking advantage of the created variable "continent" I am interested to find if the differences observed are replicable in broader regions of procedence, such as a continent. 
 
 
 
-Guest's review score by continent:
 
 
-```r
-n_cont = posts %>% 
-  select(review_continent) %>%
-  count(review_continent) %>%
-  arrange(desc(n))
-kable(n_cont, booktabs = T,col.names = c("Continent","n")) %>%
-  kable_styling(full_width = F) %>%
-  column_spec(1, bold = T, border_right = T, background = "#BBE9EF")
-```
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> Continent </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> North America </td>
-   <td style="text-align:right;"> 704102 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Europe </td>
-   <td style="text-align:right;"> 550357 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> South America </td>
-   <td style="text-align:right;"> 191382 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Asia </td>
-   <td style="text-align:right;"> 171026 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Oceania </td>
-   <td style="text-align:right;"> 71876 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Africa </td>
-   <td style="text-align:right;"> 15361 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Central America </td>
-   <td style="text-align:right;"> 6868 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> NA </td>
-   <td style="text-align:right;"> 1109 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: #BBE9EF !important;border-right:1px solid;"> Antarctica </td>
-   <td style="text-align:right;"> 5 </td>
-  </tr>
-</tbody>
-</table>
 
 ```r
 posts %>% 
-   select( review_score, review_continent) %>%
-   filter(!is.na(review_continent)& review_continent!="Antarctica") %>%
-   ggplot(aes(x=fct_reorder(review_continent, review_score, median), y=review_score)) +
-    geom_boxplot() +
+  select( review_score, review_continent) %>%
+  filter(!is.na(review_continent)& review_continent!="Antarctica") %>%
+  ggplot(aes(x=fct_reorder(review_continent, review_score, median), y=review_score)) +
+  geom_boxplot() +
   coord_flip()+
   xlab("Continent")+
   ylab("Review Score")+
-  theme_bw(16)
+  theme_gray(12)
 ```
 
-![](web_report_files/figure-html/contbox-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/figure-html/contbox-1.png" style="display: block; margin: auto;" />
 
-By aggregating where the reviews come from in a smaller scale, such as continents, we observe that the pattern is not so clear anymore. All continents seems to have a very similar distribution with some minor differences, being countries from North America the ones with a higher median of review score. But, certainly, all continents have the same range of data and similar quartiles and medians scores.
+By aggregating where the reviews come from in a broader scale, such as continents, we observe that the pattern is not so clear anymore. All continents seems to have a very similar distribution with some minor differences, being countries from North America the ones with a higher median of review score. But, certainly, all continents have the same range of data and similar quartiles and medians scores.
 
 
 
@@ -1137,20 +1092,20 @@ posts %>%
   ggplot(aes(review_score, fct_reorder(review_continent, review_score, median))) +
   geom_density_ridges(scale=2, fill = "lightblue") +
   scale_x_continuous(breaks = seq(2,10,1)) +
-  theme_gray(16)+
+  theme_gray(12)+
   labs(x = "Review Score", y="Continent")
 ```
 
-![](web_report_files/figure-html/contdens-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/contdens-1.png" style="display: block; margin: auto;" />
 
-A ridge line plot seems to reveal that scores distributions for all continents could have a second, lower, median, coming maybe from a bimodal distribution. 
+The ridge line plot seems to reveal that distributions of scores for all continents could have a second, lower, median, coming maybe from a bimodal distribution. 
 
 
 ```r
-#top 3 continent review per city
+#continent review per city
 top3continent = posts %>% 
-  filter(!is.na(review_continent)) %>%
   select(city, review_continent) %>%
+  filter(!is.na(review_continent) & review_continent!="Antarctica") %>%
   group_by(city) %>% 
   count(review_continent) %>%
   mutate(N=sum(n)) %>%
@@ -1159,91 +1114,40 @@ top3continent = posts %>%
   mutate(freq = n/N) 
 
 ggplot(top3continent, aes(x=review_continent, y=freq, group=city)) +
-  geom_col() +
+  geom_col(fill = "#009E73") +
   facet_wrap(~city, nrow=5) +
   scale_y_continuous(labels = scales::percent)+
   labs(y="Percentage of reviews by city", x="Continent")+
   coord_flip()+
-  theme_gray(16)
+  theme_gray(12)
 ```
 
-![](web_report_files/figure-html/contcity-1.png)<!-- -->
+<img src="/assets/img/portfolio/web_report_files/contcity-1.png" style="display: block; margin: auto;" />
 
-This plot reveals that if we facet the number of reviews per continent by cities we see some differences on the proportion of tourists from different continents. Worth noting that San Francisco is the only city with apparently a profile more prone to European tourists, in comparison to all other cities. 
+This plot reveals that if we facet the number of reviews per continent by cities we see some differences on the proportion of tourists from different continents. 
 
-The other interesting fact to observe is how Asian tourists are low on proportion in all cities but Honolulu, where the proportion is almost the same as the North American travelers.
-
-
-<!-- Hotel Overall Score by number of Stars -->
-
-<!-- ```{r starscity} -->
-<!-- hotels %>% -->
-<!--   filter(!is.na(review_score) & !is.na(hotel_stars)) %>% -->
-<!--   ggplot(aes(fct_reorder(hotel_stars, review_score, fun=median), review_score)) + -->
-<!--   geom_boxplot() + -->
-<!--   coord_flip() + -->
-<!--   xlab("Hotel Stars")+ -->
-<!--   ylab("Review Score")+ -->
-<!--   theme_gray(16) -->
-
-<!-- ``` -->
-
-
-
-
-
-## Interactive component
-
-For the interactive component of the study the following application shows the top 10 countries that reviewed mostly in each city of the sample. You can compare by city in an interactive way:
-
-[Link to blockbuilder.org](https://blockbuilder.org/jacquelinearaya/d3dd34ed25be49c584d840ec23476cba)
-
-
-```r
-#top 10 country reviews per city
-top10country = posts %>% 
-  select(city, review_country) %>%
-  group_by(city) %>% 
-  count(review_country) %>%
-  top_n(10) %>%
-  arrange(city, desc(n))
-
-write.csv(top10country, "./top10country.csv", col.names = TRUE, row.names = FALSE)
-
-#top 3 continent review per city
-# top3continent = posts %>% 
-#   select(city, review_continent) %>%
-#   group_by(city) %>% 
-#   count(review_continent) %>%
-#   top_n(3) %>%
-#   arrange(city, desc(n))
-
-#write.csv(top3continent, "./top3continent.csv", col.names = TRUE, row.names = FALSE)
-```
+Worth noting that San Francisco and New York City are the only cities that get more European tourists than local tourists, in comparison to all other cities, in this site in particular. 
+The other interesting fact to observe is how Asian tourists are low on proportion in all cities but Honolulu, where the proportion is almost the same as the North American travellers. Equally interesting, but not surprising, is the porportion of South Americans tourists visiting (and reviewing) Miami and Orlando in contrast with other cities.
 
 ## Conclusion
 
-Even though non of the patterns and conclusions we found in this exploratory analysis are causal effects, we definitively discover some interesting findings respect to hotel reviews on the site Booking.com for United States cities.
+Even though non of the patterns and findings of this exploratory analysis are causal effects, there were very interestings correlations going on.
 
 
-We found some not obvious, but expected results such as:
+I found some not obvious, but expected results such as:
 
 * The highest number of reviews in every city of the study come from local travelers
 * The cities with the highest number of reviews are New York City and Los Angeles, not surprinsingly, the biggest cities in the sample
-* For individual guests scores, New York City is the one with the biggest proportion
+* For individual guests scores, New York City is the one with the biggest proportion of reviews
 
 Other findings regarding scores distributions:
 
 * Almost all scores in the study are left skewed with medians around a score of 8.0
-* The overall hotel score distributions are susceptible to cities
+* The overall hotel score distributions are susceptible to differences by cities
 * The overall hotel score distributions are susceptible to the number of stars of the hotel, as expected, more luxury hotels tend to have better scores than more regular ones. Here, the services, staff and quality seem to accomplish their purpose
-* The way in which a site decides to design its review system is going to have a huge impact in the way reviews are distributed. We unveiled an odd behavior of scores due to the structure of the score guests can give on Booking.com
+* The way in which a site decides to design its review system is going to have a huge impact in the way reviews are distributed. It was possible to unveiled an odd behavior of scores due to the structure of the score guests can give on Booking.com
 
 
-The main and most meaningful finding of this analysis was the fact that the sample did present some differences in guest's scores for hotels in US cities when looking at the country tourists come from. When filtering countries with more than 5,000 reviews, there's room to think that differences are most decisevely. This fact is replicated when looking at the variance of scores per country. The sample suggests there are distinctive world regions when considering how much heterogeneity there is in scores people give to their stays. This alone is particularly intriguing and deserves a closer look, and may be hepful for companies to think on a more customizable experience.
+The main and most meaningful finding of this analysis was the fact that the sample did present some differences in guest's scores for hotels in US cities when looking at the country tourists come from. When filtering countries with more than 1,000 reviews, there's room to think that differences are most decisevely. This fact is replicated when looking at the variance of scores per country. The sample suggests there are distinctive world regions when considering how much heterogeneity there is in scores people give to their stays. This alone is particularly intriguing and deserves a closer look, and may be hepful for companies to think on a more customizable experience.
 
-In next steps, I would consider the addition of new variables to control the review score per country and study whereas or not the differences persist. These variables could be exogenous such at cities demographics, whether the guests are often travelers or not, what type of trip is the visit (business, leisure, etc.). But there's, categorically, more questions to be asked. 
-
-
-
-
+In next steps, I would consider the addition of new variables to control the review score per country and study whereas or not the differences persist. These variables could be exogenous such as demographics of cities, whether the guests are often travelers or not, what type of trip is the visit (business, leisure, etc.). But there's, categorically, more questions to be asked. 
