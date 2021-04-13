@@ -48,7 +48,7 @@ When you look for a city in the site, it shows you a list of properties which yo
 * Top Reviewed
 
 I chose to stick with the default of the site, which is the "Top Picks" and collect basic data of all the hotels in that list. Afterwards, for each collected hotel, I got the overall and individual scores from the full list of guest scores for all languages.
-The collection of data was made with a self-coded web scraping script written in Python [Link to Python files](https://github.com/jacquelinearaya/StatsGR5293_project/tree/master/data/raw) ad-hoc to this task and was stored in several json files. As the web scraping process was done in two steps, it was natural to come up with two different, but linked, datasets: one for hotels and their basic information along with the overall score, and a second one with the guest's scores for each hotel.
+The collection of data was made with a self-coded web scraping [script written in Python](https://github.com/jacquelinearaya/StatsGR5293_project/tree/master/data/raw) ad-hoc to this task and was stored in several json files. As the web scraping process was done in two steps, it was natural to come up with two different, but linked, datasets: one for hotels and their basic information along with the overall score, and a second one with the guest's scores for each hotel.
 Aditionally, a third python script was needed to scrape the number of stars of each hotel in the site, and was later incorporated into the hotels dataframe.
 
 These files, along with the raw data can be found in my GitHub Repository: [Github Repo](https://github.com/jacquelinearaya/StatsGR5293_project).
@@ -510,7 +510,7 @@ kable(desc_posts) %>%
 
 ## Description of data import / cleaning / transformation
 
-The collected data with the python script was dump into json files by city given the structured nature of it. Next, the preprocessing was done by a second python script that parsed the json files into CSV files [Link to csv files](https://github.com/jacquelinearaya/StatsGR5293_project/tree/master/data/tidy). These CSV files were read with R into 2 dataframes.
+The collected data with the python script was dump into json files by city given the structured nature of it. Next, the preprocessing was done by a second python script that parsed the json files into [CSV files](https://github.com/jacquelinearaya/StatsGR5293_project/tree/master/data/tidy). These CSV files were read with R into 2 dataframes.
 
   
 In addition, the variable "review_country" was recoded into a new factor variable "continent" to aggregate the origin of each review into a broader category. This was done in two steps: first, using the R library "countrycode" and second, making some manual changes in continent names creating a small dataframe to replace some continents into more detailed names (like "Canada" coded as "Americas" into "North America"). The resulting variable "continent" is a factor with 8 levels.
