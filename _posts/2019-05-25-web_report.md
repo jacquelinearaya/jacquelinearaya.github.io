@@ -30,8 +30,8 @@ Having in mind the goal of this analysis, I picked the online site Booking.com. 
 Booking.com has a very nice feature in their review system, not only you can view written reviews in many different languages, but they also display the country of the user that wrote the review. 
 Each hotel's review has two components: an overall score list of the hotel and its features and the full list of guest reviews, which are breakdown into a written part and an individual score.
 
+{% include aligner.html images="portfolio/web_report_files/overall_score.png,portfolio/web_report_files/post_example.png" column=2 %}{height=700px}
 
-![Overall hotel score in Booking.com](/assets/img/portfolio/web_report_files/overall_score.png){height=500px} ![User posts for a hotel in Booking.com](/assets/img/portfolio/web_report_files/post_example.png){height=700px}
 
 
 I will focus my analysis in the quantitative part of the review, collecting the overall and individual scores. The overall score is calculated with at least 5 reviews and it's based on the last 24 months reviews. 
@@ -548,7 +548,6 @@ posts = posts %>%
 
 
 ```r
-#hotels missing
 colSums(is.na(hotels)) %>%
   sort(decreasing=TRUE) %>%
   kable(col.names = "Missing") %>%
@@ -664,7 +663,6 @@ hotels %>%
 
 
 ```r
-#Plot to see how many posts have each city
 posts %>%
   filter(!is.na(review_country)) %>%
   mutate(citycount = fct_infreq(city)) %>%
@@ -685,7 +683,6 @@ Since the goal of this study is to explore differences within countries reviews,
 
 
 ```r
-#reviews missing
 colSums(is.na(posts)) %>%
   sort(decreasing=TRUE)  %>%
   kable(col.names = "Missing") %>%
@@ -774,8 +771,6 @@ hotels %>%
 <img src="/assets/img/portfolio/web_report_files/overallhist-1.png" style="display: block; margin: auto;" />
 
 ```r
-#summary(hotels$review_score)
-
 hotels %>% summarise_at('review_score',list('Min.' = min, 
                                             '1st. Quartile' = function(x,...) quantile(x,probs = 0.25,...),
                                             'Median' = median,
@@ -829,8 +824,6 @@ How do this overall score distributes by city?
 
 
 ```r
-#Plots to study the distribution of post_scores 
-#By city
 meds = hotels %>% 
   select(city, review_score) %>%  
   group_by(city) %>% 
@@ -901,14 +894,13 @@ ggplot(posts, aes(review_score))+
   theme_gray(12)
 ```
 
-<img src="/assets/img/portfolio/web_report_files/figure-html/pscores-1.png" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/web_report_files/pscores-1.png" style="display: block; margin: auto;" />
 
 Here we see an interesting and somewhat odd distribution due to some gaps between certain values of the score that the guests give to an hotel. If we look closer, there is indeed values that simply doesn't happen, but also there is an unexpected behaviour in the amount of values for integer scores: 3, 4, 5, 6, 7, 8 and 9. For review type of values one would expect that people tend to give integer scores or half scores (i.e. 5.5, 8.5, 9.5) but not so much in between, like 9.1 or 2.4. The most pausible explanation for these results resides in the review system of Booking.com, where they present to guests the option to give from 1 to 4 smiley faces for each category and then taking the average of reviewed items (as mentioned in the introduction). With this system, you can easily get the distribution of scores we are observing since each category can get a score in [0, 2.5, 5, 7.5, 10] only, so for example, if you rank 5 with 3 faces and 1 with 1 you'll get a score of ~6.7. This is why we get a higuer amount of scores with a decimal point rather than integer ones.
 
 Now, let's break down the guest's score by city:
 
 ```r
-#By city
 pmeds = posts %>%
   select(city, review_score) %>%  
   group_by(city) %>% 
@@ -1101,7 +1093,6 @@ The ridge line plot seems to reveal that distributions of scores for all contine
 
 
 ```r
-#continent review per city
 top3continent = posts %>% 
   select(city, review_continent) %>%
   filter(!is.na(review_continent) & review_continent!="Antarctica") %>%
