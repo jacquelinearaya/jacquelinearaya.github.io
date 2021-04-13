@@ -1,9 +1,9 @@
 ---
-output:
-  md_document:
-    variant: gfm
-    preserve_yaml: TRUE
-layout:post
+output: 
+  html_document: 
+    code_folding: hide
+    keep_md: yes
+layout: post
 title: "Exploring hotels reviews"
 feature-img: "assets/img/coffeework_long.jpg"
 tags: [R, Data Visualization, Reviews, Statistical Analysis]
