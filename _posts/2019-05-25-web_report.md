@@ -30,7 +30,7 @@ Having in mind the goal of this analysis, I picked the online site Booking.com. 
 Booking.com has a very nice feature in their review system, not only you can view written reviews in many different languages, but they also display the country of the user that wrote the review. 
 Each hotel's review has two components: an overall score list of the hotel and its features and the full list of guest reviews, which are breakdown into a written part and an individual score.
 
-{% include aligner.html images="portfolio/web_report_files/overall_score.png,portfolio/web_report_files/post_example.png" column=2 %}{height=700px}
+{% include aligner.html images="portfolio/web_report_files/overall_score.png,portfolio/web_report_files/post_example.png" column=2 %}
 
 
 
@@ -524,7 +524,6 @@ posts$continent = countrycode(sourcevar = posts$review_country,
                               destination = "continent")
 
 
-#change some countries
 americas = data.frame(continent = c("North America","North America","North America", "North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","North America","South America","South America","South America","South America","South America","South America","South America","South America","South America","South America","South America","South America","South America", "Americas", "North America", "North America", "Oceania", "Europe", "Europe", "Asia", "Africa", "Antarctica", "Africa", "South America"), 
                       review_country = c("Bermuda","Greenland","Puerto Rico","Antigua and Barbuda","Bahamas","Barbados","Belize","Canada","Costa Rica","Cuba","Dominica","Dominican Republic","El Salvador","Grenada","Guatemala","Haiti","Honduras","Jamaica","Mexico","Nicaragua","Panama","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Trinidad and Tobago","United States of America","Argentina","Bolivia","Brazil","Chile","Colombia","Ecuador","Guyana","Paraguay","Peru","Suriname","Uruguay","Venezuela","Falkland Islands (Malvinas)", "Saint Martin", "Saint Barts", "United States Minor Outlying Islands", "Micronesia", "Kosovo", "Crimea", "British Indian Ocean Territory", "Central Africa Republic", "Antarctica", "French Southern Territories",  "South Georgia and the South Sandwich Islands"))
 americas$continent = as.character(americas$continent)
@@ -1119,7 +1118,7 @@ This plot reveals that if we facet the number of reviews per continent by cities
 Worth noting that San Francisco and New York City are the only cities that get more European tourists than local tourists, in comparison to all other cities, in this site in particular. 
 The other interesting fact to observe is how Asian tourists are low on proportion in all cities but Honolulu, where the proportion is almost the same as the North American travellers. Equally interesting, but not surprising, is the porportion of South Americans tourists visiting (and reviewing) Miami and Orlando in contrast with other cities.
 
-## Conclusion
+## Conclusions
 
 Even though non of the patterns and findings of this exploratory analysis are causal effects, there were very interestings correlations going on.
 
