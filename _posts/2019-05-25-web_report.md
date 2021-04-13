@@ -1,7 +1,10 @@
 ---
+output:
+  md_document:
+    variant: gfm
+    preserve_yaml: TRUE
 layout:post
 title: "Exploring hotels reviews"
-date: "April 25, 2019"
 feature-img: "assets/img/coffeework_long.jpg"
 tags: [R, Data Visualization, Reviews, Statistical Analysis]
 ---
