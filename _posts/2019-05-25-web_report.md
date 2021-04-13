@@ -10,10 +10,6 @@ tags: [R, Data Visualization, Reviews, Statistical Analysis]
 ---
 
 
-
-
-## Introduction
-
 Reviews or ratings of products has become almost a mainstream tool nowadays for consumers to support their purchase decision, and retailers know this, specially online retailers. Through online reviews/rating companies can build a trusted reputation on the Internet and influence their revenue. Hence, analysis of reviews and product ratings have become an important source of information about consumer preferences. 
 
 Reviews are understood as qualitative - written reviews- or quantitative - ratings - feedback leaved by customers who paid for a product/service. Usually online sites ask for customers to leave a review, after the purchase is done on their website with some sort of system review, mixing a qualitative aspect such as text or a score, number of stars, sad/happy emoji, score bar, etc. 
@@ -775,7 +771,7 @@ hotels %>%
     theme_gray(12)
 ```
 
-<img src="/assets/img/portfolio/web_report_files/figure-html/overallhist-1.png" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/web_report_files/overallhist-1.png" style="display: block; margin: auto;" />
 
 ```r
 #summary(hotels$review_score)
@@ -848,7 +844,7 @@ ggplot(hotels, aes(x=city, y=review_score)) +
   theme_gray(12)
 ```
 
-<img src="/assets/img/portfolio/web_report_files/figure-html/postscountries-1.png" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/web_report_files/postscountries-1.png" style="display: block; margin: auto;" />
  
 The distribution of hotel overall scores are dependent on the city. When plotting boxplots of hotel score per city, data seems to suggest that hotels in more expensive cities such as San Francisco and Honolulu tend to have lower scores than others such as Chicago or Orlando, but this is a just a general perception.
 
@@ -866,7 +862,7 @@ tidyhotels %>%
     theme_gray(12)
 ```
 
-<img src="/assets/img/portfolio/web_report_files/figure-html/hist-1.png" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/web_report_files/hist-1.png" style="display: block; margin: auto;" />
 
 A similar pattern can be shown when disaggregating the hotel overall score into the different features the website allows guests to evaluate the hotels. Guests tend to provide lower scores to value, while providing higher scores to location. Interestingly, there is a high concentration of hotels that obtain a perfect score in the Wi-Fi dimension.
 
@@ -886,7 +882,7 @@ hotels %>%
   theme_gray(12)
 ```
 
-<img src="/assets/img/portfolio/web_report_files/figure-html/starscity-1.png" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/web_report_files/starscity-1.png" style="display: block; margin: auto;" />
 
 One may expect that hotel's overall scores reflect to some degree the quality of an hotel. At the same time, hotels are categorized by the website on the attribute "stars", from 1 (lowest) to 5 (highest), which aims to reveal the amenities and level of service expected from the hotel. The data shows a strong relationship between the hotel overall score, provided by guests, and the number of stars that the hotel has. Interestingly, high stars hotels are distributed only in the higher portion of the scale (most hotels of 4 or more stars have a score higher than 7); whereas hotels with 1 or 2 stars not only have lower scores in average, but also are distributed over a wider range. 
 
@@ -1082,7 +1078,7 @@ posts %>%
   theme_gray(12)
 ```
 
-<img src="/assets/img/portfolio/web_report_files/figure-html/contbox-1.png" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/web_report_files/contbox-1.png" style="display: block; margin: auto;" />
 
 By aggregating where the reviews come from in a broader scale, such as continents, we observe that the pattern is not so clear anymore. All continents seems to have a very similar distribution with some minor differences, being countries from North America the ones with a higher median of review score. But, certainly, all continents have the same range of data and similar quartiles and medians scores.
 
