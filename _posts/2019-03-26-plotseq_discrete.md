@@ -49,14 +49,14 @@ plt.setp(baseline, visible=True)
 plt.show()
 ```
 
-<img src="/assets/img/portfolio/plotseq_discrete_files/ex1-1.png" width="976" height="400" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/plotseq_discrete_files/ex1-1.png" width="876" height="400" style="display: block; margin: auto;" />
 
 We can now see for sure, that Matplotlib developers really love Matlab's graph style, since the plots are very much alike. So, you can easily use Python for the same goal with Matlab.
 
 
 <div class="figure" style="text-align: center">
-<img src="/assets/img/portfolio/plotseq_discrete_files/matlab.png" alt="Matlab stem plot" width="960" height="400" />
-<p class="caption"><b>Matlab stem plot</p>
+<img src="/assets/img/portfolio/plotseq_discrete_files/matlab.png" alt="Matlab stem plot" width="860" height="400" />
+<p class="caption"><b>Matlab stem plot</b></p>
 </div>
 
 
