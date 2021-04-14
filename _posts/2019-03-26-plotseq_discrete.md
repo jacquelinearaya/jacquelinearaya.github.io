@@ -54,13 +54,9 @@ plt.show()
 We can now see for sure, that Matplotlib developers really love Matlab's graph style, since the plots are very much alike. So, you can easily use Python for the same goal with Matlab.
 
 
-```r
-knitr::include_graphics("/assets/img/portfolio/plotseq_discrete_files/matlab.png")
-```
-
 <div class="figure" style="text-align: center">
-<img src="matlab.png" alt="Matlab stem plot" width="560" />
-<p class="caption">Matlab stem plot</p>
+<img src="/assets/img/portfolio/plotseq_discrete_files/matlab.png" alt="Matlab stem plot" width="560" />
+<p class="caption"><br>Matlab stem plot</br>></p>
 </div>
 
 
