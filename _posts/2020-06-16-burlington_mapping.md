@@ -2,7 +2,6 @@
 layout: post
 title: "Alternatives to ggmap for beautiful maps"
 author: "Jacqueline Araya"
-date: "6/16/2020"
 output: 
   html_document: 
     keep_md: yes
