@@ -80,11 +80,11 @@ sort_hvars = c("hotel_id","hotel_name","hotel_address","city","hotel_stars","rev
 hotels = hotels[,sort_hvars]
 
 kable(head(hotels[50:100,]))%>%
-  kable_styling(full_width = T, font_size = 13)%>%
+  kable_styling(full_width = T, font_size = 11.5)%>%
   row_spec(0, bold = T, background = "#BBE9EF")
 ```
 
-<table class="table" style="font-size: 13px; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 11.5px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> hotel_id </th>
@@ -548,11 +548,11 @@ posts = posts %>%
 colSums(is.na(hotels)) %>%
   sort(decreasing=TRUE) %>%
   kable(col.names = "Missing") %>%
-  kable_styling(full_width = F, position = "center",bootstrap_options = c("striped", "hover"), font_size = 9) %>%
+  kable_styling(full_width = F, position = "center",bootstrap_options = c("striped", "hover"), font_size = 13) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF")
 ```
 
-<table class="table table-striped table-hover" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
