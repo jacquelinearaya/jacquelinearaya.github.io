@@ -80,11 +80,11 @@ sort_hvars = c("hotel_id","hotel_name","hotel_address","city","hotel_stars","rev
 hotels = hotels[,sort_hvars]
 
 kable(head(hotels[50:100,]))%>%
-  kable_styling(full_width = T, font_size = 11)%>%
+  kable_styling(full_width = T, font_size = 13)%>%
   row_spec(0, bold = T, background = "#BBE9EF")
 ```
 
-<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 13px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> hotel_id </th>
@@ -240,14 +240,14 @@ desc_hotels = data.frame(Variable =sort_hvars,
 
 
 kable(desc_hotels) %>%
-  kable_styling(full_width = F, font_size = 11) %>%
+  kable_styling(full_width = F, font_size = 13) %>%
   add_header_above(c("", "Hotel Table", "6,738 Observations"), bold = TRUE, align = "c" ) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF") %>%
   column_spec(2, width = "30em") %>%
   column_spec(3, width = "30em")
 ```
 
-<table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
 <tr>
 <th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
@@ -351,11 +351,11 @@ sort_pvars = c("hotel_id","city","review_id","review_score","review_date","revie
 posts = posts[,sort_pvars]
 
 kable(head(posts[50:100,]))%>%
-  kable_styling(full_width = T, font_size = 11)%>%
+  kable_styling(full_width = T, font_size = 13)%>%
   row_spec(0, bold = T, background = "#BBE9EF")
 ```
 
-<table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 13px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:right;font-weight: bold;background-color: #BBE9EF !important;"> hotel_id </th>
@@ -446,14 +446,14 @@ desc_posts = data.frame(Variable = sort_pvars,
                          ))
 
 kable(desc_posts) %>%
-  kable_styling(full_width = F, font_size = 11) %>%
+  kable_styling(full_width = F, font_size = 13) %>%
   add_header_above(c("", "Guest's score Table", "1,712,086 Observations"), bold = TRUE, align = "c" ) %>%
   column_spec(1, bold = T, border_right = T, background = "#BBE9EF") %>%
   column_spec(2, width = "30em") %>%
   column_spec(3, width = "30em")
 ```
 
-<table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
 <tr>
 <th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
