@@ -12,4 +12,4 @@ My name is Jacqueline Araya and I'm a Data Scientist based in London, UK. I rece
 Prior to living in New York, I obtained my B.Eng.Sc in Industrial Engineering from Universidad de Chile, where I developed both a strong quantitative skill set and the foundation to understand the different areas of business.
 
 
- Let's connect at [LinkedIn](https://www.linkedin.com/in/arayajacqueline/) or contact me at ja3076@columbia.edu.
+ Let's connect on [LinkedIn](https://www.linkedin.com/in/arayajacqueline/) or contact me at ja3076@columbia.edu.
