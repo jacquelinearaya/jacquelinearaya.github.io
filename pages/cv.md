@@ -5,4 +5,4 @@ permalink: /cv/
 tags: [cv]
 ---
 
-{% include resume2021_JAraya.pdf %}
+{% pdf "/assets/resume2021_JAraya.pdf" %}
