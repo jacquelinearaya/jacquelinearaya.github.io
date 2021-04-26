@@ -1,5 +1,8 @@
 ---
-pdf_file: "/assets/resume2021_JAraya.pdf"
+layout: page
+title: CV
+permalink: /cv/
+tags: [cv]
 ---
 
-{% pdf {{ page.pdf_file }} %}
+{% include cv.html %}
