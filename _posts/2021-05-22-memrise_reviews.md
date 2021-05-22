@@ -27,41 +27,34 @@ with open('./memrise_reviews_en.json', 'w', encoding='utf-8') as w:
 
 
 
-{% include aligner.html images="./assets/img/portfolio/memrise_reviews/histogram_counts.png" %}
+{% include aligner.html images="./assets/img/portfolio/memrise_reviews/histogram_counts.png" column=1%}
 
-![image](/assets/img/portfolio/memrise_reviews/histogram_counts.png)
-<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="800" height="350" style="display: block; margin: auto;" />
-
-
-
-
-{% include aligner.html images="assets/img/portfolio/memrise_reviews/hist_perlanguage.png" %}
-<img src="assets/img/portfolio/memrise_reviews/hist_perlanguage.png" width="800" height="350" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="800" height="750" style="display: block; margin: auto;" />
 
 
 
 
-{% include aligner.html images="assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg" %}
-<img src="assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg" width="800" height="350" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/hist_perlanguage.png" width="800" height="350" style="display: block; margin: auto;" />
 
 
 
 
-{% include aligner.html images="assets/img/portfolio/memrise_reviews/fraction_count_language_all.jpg" %}
-<img src="assets/img/portfolio/memrise_reviews/fraction_count_language_all.jpg" width="800" height="350" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg" width="800" height="350" style="display: block; margin: auto;" />
 
 
 
-{% include aligner.html images="assets/img/portfolio/memrise_reviews/fraction_count_language_english.jpg" %}
-<img src="assets/img/portfolio/memrise_reviews/fraction_count_language_english.jpg" width="800" height="350" style="display: block; margin: auto;" />
+
+<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_all.jpg" width="800" height="350" style="display: block; margin: auto;" />
 
 
 
-{% include aligner.html images="assets/img/portfolio/memrise_reviews/reviewcount_evolution_basic.jpg" %}
-<img src="assets/img/portfolio/memrise_reviews/reviewcount_evolution_basic.jpg" width="800" height="350" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_english.jpg" width="800" height="350" style="display: block; margin: auto;" />
 
 
 
-{% include aligner.html images="assets/img/portfolio/memrise_reviews/trends_byyear.jpg" %}
-<img src="assets/img/portfolio/memrise_reviews/trends_byyear.jpg" width="800" height="350" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/reviewcount_evolution_basic.jpg" width="800" height="350" style="display: block; margin: auto;" />
+
+
+
+<img src="/assets/img/portfolio/memrise_reviews/trends_byyear.jpg" width="800" height="350" style="display: block; margin: auto;" />
 
