@@ -29,7 +29,7 @@ with open('./memrise_reviews_en.json', 'w', encoding='utf-8') as w:
 
 {% include aligner.html images="assets/img/portfolio/memrise_reviews/histogram_counts.png" %}
 
-![image](assets/img/portfolio/memrise_reviews/histogram_counts.png)
+![image](/assets/img/portfolio/memrise_reviews/histogram_counts.png)
 
 
 
