@@ -27,7 +27,7 @@ with open('./memrise_reviews_en.json', 'w', encoding='utf-8') as w:
 ```
 
 
-### Code to structured data
+### Code to structure data
 
 ```python
 import pandas as pd
@@ -47,34 +47,36 @@ gauth = GoogleAuth()
 gauth.credentials = GoogleCredentials.get_application_default()
 drive = GoogleDrive(gauth)
 
-files_name = {'memrise_reviews_en.json': '1JJufL71mHN0QDtga2ksSJyeyuUlgvRP2',
-              'memrise_reviews_es.json': '1FkkA7I8tS0hD6wkpht7hDs6f7wBEsQOo',
-              'memrise_reviews_fr.json': '1WYaVHaonnVI8t3S0PvOW_xMKdcrs8_TR',
-              'memrise_reviews_de.json': '1oKr-d4zYaDszwpTYEK43uttaacc6NNRF',
-              'memrise_reviews_ja.json': '1devNoPa3_IWsPpL7R31XrQAzx7m8dmkj',
-              'memrise_reviews_it.json': '1EoH2Rf9RMitwKFBQz5hDsvTZL1nTeuz7',
-              'memrise_reviews_ko.json': '1fOjfo9xwBbcqgIFCXUeFIDCs3YYUUFbv',
-              'memrise_reviews_zh.json': '1MaDuZohdg_rrG-G1hp35GjtosgnCFPeW',
-              'memrise_reviews_pt.json': '1X8leMOURQAUApyAmJWL1eRciwSg9g2uL',
-              'memrise_reviews_ru.json': '1XeXc_2wOGMdyJmTTInnE5c1SqTL2fHHe',
-              'memrise_reviews_ar.json': '18Grpl6Qk78n-Vllj0Yi0G3JqCiC64xwJ',
-              'memrise_reviews_nl.json': '17TKn5eoECAV2XdxApoxDapUYshjicBRb',
-              'memrise_reviews_sv.json': '1iLdbjs_bECc55BbROP55gX9hTsbnDsWA',
-              'memrise_reviews_no.json': '14B7EKDpurDvMjRFbG0sRpvqJwtLFtgdv',
-              'memrise_reviews_pl.json': '1fc2yJcAi9XVKGudJqOXsKxu0uU_LCWfN',
-              'memrise_reviews_tr.json': '1JwKYwyU9AlmLenOcn3x1papa4ngCpk9q',
-              'memrise_reviews_da.json': '1r0hFqIv5WxYAjs1s0hsKdbpbc03UCnwd'}
+files_name = {'memrise_reviews_en.json': '', #fill with google drive share code of file
+              'memrise_reviews_es.json': '',
+              'memrise_reviews_fr.json': '',
+              'memrise_reviews_de.json': '',
+              'memrise_reviews_ja.json': '',
+              'memrise_reviews_it.json': '',
+              'memrise_reviews_ko.json': '',
+              'memrise_reviews_zh.json': '',
+              'memrise_reviews_pt.json': '',
+              'memrise_reviews_ru.json': '',
+              'memrise_reviews_ar.json': '',
+              'memrise_reviews_nl.json': '',
+              'memrise_reviews_sv.json': '',
+              'memrise_reviews_no.json': '',
+              'memrise_reviews_pl.json': '',
+              'memrise_reviews_tr.json': '',
+              'memrise_reviews_da.json': ''}
 
 for key, value in files_name.items():
   downloaded = drive.CreateFile({'id': value, 
                                 'title': key})
   print("Downloading {} file ...".format(key))
   downloaded.GetContentFile(key)
-
-langs = {'en':'english','es':'spanish','fr':'french','de':'german','ja':'japanese','it':'italian','ko':'korean','zh':'chinese','pt':'portuguese','ru':'russian','ar':'arabic',\
-         'nl':'dutch','sv':'swedish','no':'norwegian', 'pl':'polish','tr': 'turkish', 'da':'danish'}
+```
 
 
+```python
+langs = {'en':'english','es':'spanish','fr':'french','de':'german','ja':'japanese','it':'italian','ko':'korean',\
+		'zh':'chinese','pt':'portuguese','ru':'russian','ar':'arabic','nl':'dutch','sv':'swedish','no':'norwegian',\
+		'pl':'polish','tr': 'turkish', 'da':'danish'}
 
 data = []
 for key, value in files_name.items():
@@ -105,32 +107,32 @@ except Exception as e:
 
 ```
 
-<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="500" height="650" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="500" height="250" style="display: block; margin: auto;" />
 
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/hist_perlanguage.png" width="800" height="450" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/hist_perlanguage.png" style="display: block; margin: auto;" />
 
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg" width="800" height="450" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg"  style="display: block; margin: auto;" />
 
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_all.jpg" width="800" height="450" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_all.jpg"  style="display: block; margin: auto;" />
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_english.jpg" width="800" height="450" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_english.jpg"  style="display: block; margin: auto;" />
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/reviewcount_evolution_basic.jpg" width="800" height="450" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/reviewcount_evolution_basic.jpg"  style="display: block; margin: auto;" />
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/trends_byyear.jpg" width="800" height="450" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/trends_byyear.jpg"  style="display: block; margin: auto;" />
 
