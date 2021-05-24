@@ -72,9 +72,9 @@ df.head(10)
                       text-align: right;
                   }
               </style>
-              <table border=\"1\" class=\"dataframe\">
+              <table border="1" class="dataframe">
                 <thead>
-                  <tr style=\"text-align: right;\">
+                  <tr style="text-align: right;">
                     <th></th>
                     <th>review_id</th>
                     <th>score</th>
@@ -177,7 +177,7 @@ df.head(10)
                   </tr>
                 </tbody>
               </table>
-              </div>
+</div>
 
 
 
@@ -193,7 +193,7 @@ After a couple of adjustments like dropping columns I won't use, renaming some o
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" height="80%" style="display: block; margin: auto;" />
 
 
 
