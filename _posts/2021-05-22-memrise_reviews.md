@@ -56,134 +56,174 @@ df['total_words'] = df['content'].str.split().str.len()
 
 df = df.drop(['content'], axis=1)
 
-df.head(10)
-```
-<div>
-              <style scoped>
-                  .dataframe tbody tr th:only-of-type {
-                      vertical-align: middle;
-                  }
-              
-                  .dataframe tbody tr th {
-                      vertical-align: top;
-                  }
-              
-                  .dataframe thead th {
-                      text-align: right;
-                  }
-              </style>
-              <table border="1" class="dataframe">
-                <thead>
-                  <tr style="text-align: right;">
-                    <th></th>
-                    <th>review_id</th>
-                    <th>score</th>
-                    <th>thumbsup_count</th>
-                    <th>timestamp</th>
-                    <th>language</th>
-                    <th>total_words</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>0</th>
-                    <td>gp:AOqpTOHamIweFSBCS7OWLBfdyWjz3WgGmb0n8-MEeo5...</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>2021-05-19 15:44:07</td>
-                    <td>english</td>
-                    <td>16.0</td>
-                  </tr>
-                  <tr>
-                    <th>1</th>
-                    <td>gp:AOqpTOGI8LwkPYOi1l8BX2GJAEx-FKWmnVb1NK2UrAE...</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>2021-05-19 15:16:39</td>
-                    <td>english</td>
-                    <td>1.0</td>
-                  </tr>
-                  <tr>
-                    <th>2</th>
-                    <td>gp:AOqpTOHCthAjKSUTaGwEOycjfNY61otauSj_6kDwxhy...</td>
-                    <td>4</td>
-                    <td>0</td>
-                    <td>2021-05-19 14:49:37</td>
-                    <td>english</td>
-                    <td>12.0</td>
-                  </tr>
-                  <tr>
-                    <th>3</th>
-                    <td>gp:AOqpTOEibnCpS70HfqEt0wqObDehV1GrFzQeKw9Jbtp...</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>2021-05-19 14:44:03</td>
-                    <td>english</td>
-                    <td>4.0</td>
-                  </tr>
-                  <tr>
-                    <th>4</th>
-                    <td>gp:AOqpTOFidYL61WOS0IsVF3tdBe2Of6Q28oEZfowTAJH...</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>2021-05-19 14:28:16</td>
-                    <td>english</td>
-                   <td>15.0</td>
-                  </tr>
-                  <tr>
-                    <th>5</th>
-                    <td>gp:AOqpTOGuXG3mnaWJ4Uj96R5hpCsWz-YGSkZ1Dd9xgLf...</td>
-                    <td>4</td>
-                    <td>0</td>
-                    <td>2021-05-19 12:41:31</td>
-                    <td>english</td>
-                    <td>9.0</td>
-                  </tr>
-                  <tr>
-                    <th>6</th>
-                    <td>gp:AOqpTOEp_tmeJqpXiVjsSEeqc6IUNV8btLarVNESB04...</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>2021-05-19 12:23:26</td>
-                    <td>english</td>
-                    <td>2.0</td>
-                  </tr>
-                  <tr>
-                    <th>7</th>
-                    <td>gp:AOqpTOGZB1cGF07pZ8A6Gzr_RARdP4-BwljmaTnEDXi...</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>2021-05-19 12:16:25</td>
-                    <td>english</td>
-                    <td>2.0</td>
-                  </tr>
-                  <tr>
-                    <th>8</th>
-                    <td>gp:AOqpTOFjeVT0CnGViQUSEWLYkugC7Wyyh03CnIZxMqR...</td>
-                    <td>4</td>
-                    <td>0</td>
-                    <td>2021-05-19 11:06:25</td>
-                    <td>english</td>
-                    <td>3.0</td>
-                  </tr>
-                  <tr>
-                    <th>9</th>
-                    <td>gp:AOqpTOHkCP3JjEm3V7FQ_JQQ9fCbOVLCORMBloB2aHq...</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>2021-05-19 09:19:35</td>
-                    <td>english</td>
-                    <td>38.0</td>
-                  </tr>
-                </tbody>
-              </table>
-</div>
+{
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 363
+        },
+        "id": "JuoNWbmRXSxA",
+        "outputId": "e3e67ae6-c728-452b-9124-eed3ab37e389"
+      },
+      "source": [
+        "df.head(10)"
+      ],
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>review_id</th>\n",
+              "      <th>score</th>\n",
+              "      <th>thumbsup_count</th>\n",
+              "      <th>timestamp</th>\n",
+              "      <th>language</th>\n",
+              "      <th>total_words</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>gp:AOqpTOHamIweFSBCS7OWLBfdyWjz3WgGmb0n8-MEeo5...</td>\n",
+              "      <td>2</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 15:44:07</td>\n",
+              "      <td>english</td>\n",
+              "      <td>16.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>gp:AOqpTOGI8LwkPYOi1l8BX2GJAEx-FKWmnVb1NK2UrAE...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 15:16:39</td>\n",
+              "      <td>english</td>\n",
+              "      <td>1.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>gp:AOqpTOHCthAjKSUTaGwEOycjfNY61otauSj_6kDwxhy...</td>\n",
+              "      <td>4</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 14:49:37</td>\n",
+              "      <td>english</td>\n",
+              "      <td>12.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>gp:AOqpTOEibnCpS70HfqEt0wqObDehV1GrFzQeKw9Jbtp...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 14:44:03</td>\n",
+              "      <td>english</td>\n",
+              "      <td>4.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>gp:AOqpTOFidYL61WOS0IsVF3tdBe2Of6Q28oEZfowTAJH...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 14:28:16</td>\n",
+              "      <td>english</td>\n",
+              "      <td>15.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>gp:AOqpTOGuXG3mnaWJ4Uj96R5hpCsWz-YGSkZ1Dd9xgLf...</td>\n",
+              "      <td>4</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 12:41:31</td>\n",
+              "      <td>english</td>\n",
+              "      <td>9.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>gp:AOqpTOEp_tmeJqpXiVjsSEeqc6IUNV8btLarVNESB04...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 12:23:26</td>\n",
+              "      <td>english</td>\n",
+              "      <td>2.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>gp:AOqpTOGZB1cGF07pZ8A6Gzr_RARdP4-BwljmaTnEDXi...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 12:16:25</td>\n",
+              "      <td>english</td>\n",
+              "      <td>2.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>gp:AOqpTOFjeVT0CnGViQUSEWLYkugC7Wyyh03CnIZxMqR...</td>\n",
+              "      <td>4</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 11:06:25</td>\n",
+              "      <td>english</td>\n",
+              "      <td>3.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>9</th>\n",
+              "      <td>gp:AOqpTOHkCP3JjEm3V7FQ_JQQ9fCbOVLCORMBloB2aHq...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 09:19:35</td>\n",
+              "      <td>english</td>\n",
+              "      <td>38.0</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                                           review_id  ...  total_words\n",
+              "0  gp:AOqpTOHamIweFSBCS7OWLBfdyWjz3WgGmb0n8-MEeo5...  ...         16.0\n",
+              "1  gp:AOqpTOGI8LwkPYOi1l8BX2GJAEx-FKWmnVb1NK2UrAE...  ...          1.0\n",
+              "2  gp:AOqpTOHCthAjKSUTaGwEOycjfNY61otauSj_6kDwxhy...  ...         12.0\n",
+              "3  gp:AOqpTOEibnCpS70HfqEt0wqObDehV1GrFzQeKw9Jbtp...  ...          4.0\n",
+              "4  gp:AOqpTOFidYL61WOS0IsVF3tdBe2Of6Q28oEZfowTAJH...  ...         15.0\n",
+              "5  gp:AOqpTOGuXG3mnaWJ4Uj96R5hpCsWz-YGSkZ1Dd9xgLf...  ...          9.0\n",
+              "6  gp:AOqpTOEp_tmeJqpXiVjsSEeqc6IUNV8btLarVNESB04...  ...          2.0\n",
+              "7  gp:AOqpTOGZB1cGF07pZ8A6Gzr_RARdP4-BwljmaTnEDXi...  ...          2.0\n",
+              "8  gp:AOqpTOFjeVT0CnGViQUSEWLYkugC7Wyyh03CnIZxMqR...  ...          3.0\n",
+              "9  gp:AOqpTOHkCP3JjEm3V7FQ_JQQ9fCbOVLCORMBloB2aHq...  ...         38.0\n",
+              "\n",
+              "[10 rows x 6 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 18
+        }
+      ]
+    }
 
 
 
 
 
-```python
 df.to_csv('memrise_df_languages.csv', index=False)
 
 ```
@@ -193,7 +233,7 @@ After a couple of adjustments like dropping columns I won't use, renaming some o
 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" height="80%" style="display: block; margin: auto;" />
+<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="550" height="400" style="display: block; margin: auto;" />
 
 
 
