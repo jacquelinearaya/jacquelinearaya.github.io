@@ -1,14 +1,16 @@
 ---
-title: "Analyzing reviews"
+title: "Visualizing App reviews with Tableau"
 author: "Jacqueline Araya"
 date: "May 22, 2021"
 layout: post
-feature-img: "assets/img/portfolio/lollipop.jpg"
+feature-img: "assets/img/portfolio/languages.jpg"
 tags: [Online Reviews, Data Visualization, Tableau]
 ---
 
+In this post I want to show how easy and quick you can explore your data and look for insights using Tableau.
 
-### Code to Scrape
+This time, I will be using review's data from a very popular language learning app called Memrise from the Google Play Store. I collected the dataset using the open source API, [Google-Play-Scraper](https://pypi.org/project/google-play-scraper/) using Python:
+
 
 ```python
 import json
@@ -26,51 +28,7 @@ with open('./memrise_reviews_en.json', 'w', encoding='utf-8') as w:
 	json.dump(reviews_list_en, w, indent=4)
 ```
 
-
-### Code to structure data
-
-```python
-import pandas as pd
-import json
-
-# Connect to Google Drive (to load raw data)
-!pip install -U -q PyDrive
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-from google.colab import auth
-from oauth2client.client import GoogleCredentials
-from google.colab import files, drive
-
-# Authenticate and create the PyDrive client.
-auth.authenticate_user()
-gauth = GoogleAuth()
-gauth.credentials = GoogleCredentials.get_application_default()
-drive = GoogleDrive(gauth)
-
-files_name = {'memrise_reviews_en.json': '', #fill with google drive share code of file
-              'memrise_reviews_es.json': '',
-              'memrise_reviews_fr.json': '',
-              'memrise_reviews_de.json': '',
-              'memrise_reviews_ja.json': '',
-              'memrise_reviews_it.json': '',
-              'memrise_reviews_ko.json': '',
-              'memrise_reviews_zh.json': '',
-              'memrise_reviews_pt.json': '',
-              'memrise_reviews_ru.json': '',
-              'memrise_reviews_ar.json': '',
-              'memrise_reviews_nl.json': '',
-              'memrise_reviews_sv.json': '',
-              'memrise_reviews_no.json': '',
-              'memrise_reviews_pl.json': '',
-              'memrise_reviews_tr.json': '',
-              'memrise_reviews_da.json': ''}
-
-for key, value in files_name.items():
-  downloaded = drive.CreateFile({'id': value, 
-                                'title': key})
-  print("Downloading {} file ...".format(key))
-  downloaded.GetContentFile(key)
-```
+I decided to do this for the list of languages available in the app, which you can do by simply changing the `language` parameter as shown above (english). With a json file for every language, I decided next to structure all reviews into a Pandas dataframe:
 
 
 ```python
@@ -79,7 +37,7 @@ langs = {'en':'english','es':'spanish','fr':'french','de':'german','ja':'japanes
 		'pl':'polish','tr': 'turkish', 'da':'danish'}
 
 data = []
-for key, value in files_name.items():
+for key, value in files_name.items(): #read json files into files_names dictionary
   df_aux = pd.read_json(key, orient='records')
   df_aux['language'] = langs[key[16:18]]
   print(df_aux.shape[0])
@@ -96,18 +54,146 @@ df = df.rename(columns={'reviewId':'review_id','userName':'user_name', 'thumbsUp
 
 df['total_words'] = df['content'].str.split().str.len()
 
+df = df.drop(['content'], axis=1)
 
+df.head(10)
+```
+<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>review_id</th>\n",
+              "      <th>score</th>\n",
+              "      <th>thumbsup_count</th>\n",
+              "      <th>timestamp</th>\n",
+              "      <th>language</th>\n",
+              "      <th>total_words</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>gp:AOqpTOHamIweFSBCS7OWLBfdyWjz3WgGmb0n8-MEeo5...</td>\n",
+              "      <td>2</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 15:44:07</td>\n",
+              "      <td>english</td>\n",
+              "      <td>16.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>gp:AOqpTOGI8LwkPYOi1l8BX2GJAEx-FKWmnVb1NK2UrAE...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 15:16:39</td>\n",
+              "      <td>english</td>\n",
+              "      <td>1.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>gp:AOqpTOHCthAjKSUTaGwEOycjfNY61otauSj_6kDwxhy...</td>\n",
+              "      <td>4</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 14:49:37</td>\n",
+              "      <td>english</td>\n",
+              "      <td>12.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>gp:AOqpTOEibnCpS70HfqEt0wqObDehV1GrFzQeKw9Jbtp...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 14:44:03</td>\n",
+              "      <td>english</td>\n",
+              "      <td>4.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>gp:AOqpTOFidYL61WOS0IsVF3tdBe2Of6Q28oEZfowTAJH...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 14:28:16</td>\n",
+              "      <td>english</td>\n",
+              "      <td>15.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>gp:AOqpTOGuXG3mnaWJ4Uj96R5hpCsWz-YGSkZ1Dd9xgLf...</td>\n",
+              "      <td>4</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 12:41:31</td>\n",
+              "      <td>english</td>\n",
+              "      <td>9.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>gp:AOqpTOEp_tmeJqpXiVjsSEeqc6IUNV8btLarVNESB04...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 12:23:26</td>\n",
+              "      <td>english</td>\n",
+              "      <td>2.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>gp:AOqpTOGZB1cGF07pZ8A6Gzr_RARdP4-BwljmaTnEDXi...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 12:16:25</td>\n",
+              "      <td>english</td>\n",
+              "      <td>2.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>gp:AOqpTOFjeVT0CnGViQUSEWLYkugC7Wyyh03CnIZxMqR...</td>\n",
+              "      <td>4</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 11:06:25</td>\n",
+              "      <td>english</td>\n",
+              "      <td>3.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>9</th>\n",
+              "      <td>gp:AOqpTOHkCP3JjEm3V7FQ_JQQ9fCbOVLCORMBloB2aHq...</td>\n",
+              "      <td>5</td>\n",
+              "      <td>0</td>\n",
+              "      <td>2021-05-19 09:19:35</td>\n",
+              "      <td>english</td>\n",
+              "      <td>38.0</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+
+
+
+
+
+```python
 df.to_csv('memrise_df_languages.csv', index=False)
-
-try:
-  from google.colab import files
-  files.download('/content/memrise_df_languages.csv')
-except Exception as e:
-  pass
 
 ```
 
-<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="500" height="250" style="display: block; margin: auto;" />
+After a couple of adjustments like dropping columns I won't use, renaming some of them, and creating a new column, I ended up with the following DataFrame:
+
+
+
+
+<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="550" height="400" style="display: block; margin: auto;" />
 
 
 
