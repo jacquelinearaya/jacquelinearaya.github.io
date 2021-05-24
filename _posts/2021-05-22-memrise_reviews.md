@@ -4,12 +4,15 @@ author: "Jacqueline Araya"
 date: "May 22, 2021"
 layout: post
 feature-img: "assets/img/portfolio/languages.jpg"
-tags: [Online Reviews, Data Visualization, Tableau]
+tags: [Online Reviews, Data Visualization, Tableau, Memrise, Apps]
 ---
 
-In this post I want to show how easy and quick you can explore your data and look for insights using Tableau.
+In this post, I want to show how easy and quick you can explore your data and look for insights using Tableau.
 
-This time, I will be using review's data from a very popular language learning app called Memrise from the Google Play Store. I collected the dataset using the open source API, [Google-Play-Scraper](https://pypi.org/project/google-play-scraper/) using Python:
+This time, I will be using review data from a very popular language learning app called Memrise from the Google Play Store. Reviews are one of the most relevant pieces of information when attracting more users, so I thought it was worth looking at this data in more depth.
+
+
+I collected the dataset using the open-source API, [Google-Play-Scraper](https://pypi.org/project/google-play-scraper/) using Python:
 
 
 ```python
@@ -28,7 +31,7 @@ with open('./memrise_reviews_en.json', 'w', encoding='utf-8') as w:
 	json.dump(reviews_list_en, w, indent=4)
 ```
 
-I decided to do this for the list of languages available in the app, which you can do by simply changing the `language` parameter as shown above (english). With a json file for every language, I decided next to structure all reviews into a Pandas dataframe:
+I decided to do this for the list of languages available in the app, which you can do by simply changing the `language` parameter as shown above (English). With a json file for every language, I decided next to structure all reviews into a Pandas dataframe:
 
 
 ```python
@@ -210,25 +213,45 @@ Now, let's see the number of reviews per language:
 
 <img src="/assets/img/portfolio/memrise_reviews/hist_perlanguage.png" style="display: block; margin: auto;" />
 
-We can clearly see that reviews written in english surpasses by far the number of reviews of any other language, and it is almost the same amount as the 3 following languages: spanish, portuguese and russian. Also, it's worth noting that the review system of the app is not doing so well for north-european languages such as swedish, norwegian and danish.
+We can see that reviews written in English surpass by far the number of reviews of any other language, and it is almost the same amount as the 3 following languages: Spanish, Portuguese and Russian. Also, it's worth noting that the review system of the app is not doing so well for north-European languages such as Swedish, Norwegian, and Danish.
 
-
-<img src="/assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg"  style="display: block; margin: auto;" />
-
-
-
-
-<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_all.jpg"  style="display: block; margin: auto;" />
-
-
-
-<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_english.jpg"  style="display: block; margin: auto;" />
-
+Now, I'm wondering how the number of reviews has evolved over time, and whether there is any sign of trends going on.
 
 
 <img src="/assets/img/portfolio/memrise_reviews/reviewcount_evolution_basic.jpg"  style="display: block; margin: auto;" />
 
+The plot above tells us that the peak in the number of reviews occurred in August 2017, and it suggests that overall 2017 has been the year with more ratings for the app. The Memrise app was launched in September 2010 but probably was available at the Google Play Store a bit later. You can see a very low growth at the beginning of the graph during 2013-2015 and it's around the end of 2015 and the beginning of 2016 where the company started to get much more user interaction through ratings. Then, after 2017 the number of ratings has been in steady decline from that August 2017 peak, with some minor peaks during mostly winter times. 
+
+There is no clear evidence of any seasonal behaviour of users, meaning you can't predict when users are most likely to review the app. Nevertheless, there is a clear upwards tendency during the first years and a clear downward tendency in most recent years. Interestingly enough, I thought there would be a major increase in reviews during the first months of the pandemic, around March-April 2020, but it doesn't appear to be the case (reviews don't necessarily translate into more app usage). 
 
 
-<img src="/assets/img/portfolio/memrise_reviews/trends_byyear.jpg"  style="display: block; margin: auto;" />
+Next, I was curious about the growth in the number of reviews across the years by language. The following plot shows the fraction of the total number of reviews of each language during each year:
 
+
+<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_all.jpg"  style="display: block; margin: auto;" />
+
+It is particularly hard to see individual growth, but it is possible to see that in 2016, reviews in Korean represent 33% of its total, while 43% of reviews in Chinese were made in 2017, which we known by the plot above, was the year with the highest peak in reviews. In contrast, we can see that for Arabic, a smaller proportion of its total reviews were made during earlier years, and a bigger number of reviews were made later after the 2017 peak.
+
+
+A nice feature of Tableau is the highlighter option, which lets you see a particular value shading the rest of them. I wanted to highlight the fraction of the total reviews in English, since they represent the majority of reviews:
+
+<img src="/assets/img/portfolio/memrise_reviews/fraction_count_language_english.jpg"  style="display: block; margin: auto;" />
+
+And, what we can observe here, is that reviews in English follow the same pattern as the rest of the languages, having no particular increase or decrease out of the *normal* growth in each year.
+
+To follow this idea, I wanted to plot the cumulative growth in number of reviews per language across years:
+
+<img src="/assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg"  style="display: block; margin: auto;" />
+
+This plot confirms that the number of reviews in Japanese was the one that grew earlier and reviews in Arabic were the ones that grew slower. The difference in this rate of growth is most notably in 2017, when Japanese reviews already accounted for more than 76% of reviews, while by the same time, reviews in Arabic only accounted for 49% of its total reviews.
+
+
+And last but not least, as I mentioned above, I calculated the count of words each review has, for people that write content along with the score. I was interested if there was any difference in the number of words a person leaving a review uses in each different language. And this is a tricky one because the difference can be confounded among many things including differences in the alphabet, to length of sentences, to how much a language uses concepts, like kanjis, instead of words.
+
+So, having this in mind, I plotted the standard deviation in the number of words per language:
+
+<img src="/assets/img/portfolio/memrise_reviews/std_dv_wordcount.jpg"  style="display: block; margin: auto;" />
+
+And, not surprisingly, languages that use kanjis have a lower standard deviation than western languages, and languages that are very similar and have a common root appear together, like Spanish and Portuguese, or Dutch and Swedish, or English and German. What the standard deviation tells us is the number of words in each language the reviews tend to deviate from the average amount of words for the same language.
+
+It's easy to see that with a couple of plots quickly made on Tableau, you can rapidly get to know more about the data and see if there's anything worth exploring in more depth before doing any more complex models or analysis. 
