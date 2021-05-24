@@ -57,6 +57,9 @@ df['total_words'] = df['content'].str.split().str.len()
 df = df.drop(['content'], axis=1)
 ```
 
+After a couple of adjustments like dropping columns I won't use, renaming some of them, and creating a new column, I ended up with the following DataFrame:
+
+
 <div>
     <style scoped>
 		dataframe tbody tr th:only-of-type {
@@ -174,10 +177,18 @@ df = df.drop(['content'], axis=1)
             <td>english</td>
             <td>38.0</td>
           </tr>
+          <tr>
+            <th>...</th>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
         </tbody>
     </table>
 </div>
-
 
 
 
@@ -186,19 +197,20 @@ df.to_csv('memrise_df_languages.csv', index=False)
 
 ```
 
-After a couple of adjustments like dropping columns I won't use, renaming some of them, and creating a new column, I ended up with the following DataFrame:
+The resulting CSV file has 509,904 reviews...not bad! I decided to leave out the content of each review for now (I don't intend to do text analysis here) and use the count of words of each review instead, maybe there's some interesting there.
 
+Now that I'm done with the collection and processing part we can load the data into Tableau and start exploring!
 
+First, let's confirm what the [Google Play Store](https://play.google.com/store/apps/details?id=com.memrise.android.memrisecompanion) tells us about the number of reviews per score for this app. By looking at the following histogram, it's clear that the collected data follows the same *J-shaped* distribution:
 
+<img src="/assets/img/portfolio/memrise_reviews/histogramcounts.png" width="550" height="400" style="display: block; margin: auto;" />
 
-<img src="/assets/img/portfolio/memrise_reviews/histogram_counts.png" width="550" height="400" style="display: block; margin: auto;" />
-
-
+Now, let's see the number of reviews per language:
 
 
 <img src="/assets/img/portfolio/memrise_reviews/hist_perlanguage.png" style="display: block; margin: auto;" />
 
-
+We can clearly see that reviews written in english surpasses by far the number of reviews of any other language, and it is almost the same amount as the 3 following languages: spanish, portuguese and russian. Also, it's worth noting that the review system of the app is not doing so well for north-european languages such as swedish, norwegian and danish.
 
 
 <img src="/assets/img/portfolio/memrise_reviews/cumulative_count_language_all.jpg"  style="display: block; margin: auto;" />
