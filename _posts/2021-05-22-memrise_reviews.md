@@ -55,7 +55,7 @@ df = df.rename(columns={'reviewId':'review_id','userName':'user_name', 'thumbsUp
 df['total_words'] = df['content'].str.split().str.len()
 
 df = df.drop(['content'], axis=1)
-
+```
 {
       "cell_type": "code",
       "metadata": {
@@ -223,7 +223,7 @@ df = df.drop(['content'], axis=1)
 
 
 
-
+```python
 df.to_csv('memrise_df_languages.csv', index=False)
 
 ```
