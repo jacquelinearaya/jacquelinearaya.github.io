@@ -9,7 +9,7 @@ tags: [Online Reviews, Data Visualization, Tableau, Memrise, Apps]
 
 In this post, I want to show how easy and quick you can explore your data and look for insights using Tableau.
 
-This time, I will be using review data from a very popular language learning app called Memrise from the Google Play Store. Reviews are one of the most relevant pieces of information when attracting more users, so I thought it was worth looking at this data in more depth.
+This time, I will be using review data from a very popular language learning app called [Memrise](https://play.google.com/store/apps/details?id=com.memrise.android.memrisecompanion&hl=en_GB&gl=US) from the Google Play Store. Reviews are one of the most relevant pieces of information when attracting more users, so I thought it was worth looking at this data in more depth.
 
 
 I collected the dataset using the open-source API, [Google-Play-Scraper](https://pypi.org/project/google-play-scraper/) using Python:
